@@ -1,0 +1,28 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+#
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: actistaff-www_development
+  username: <%= ENV['PG_DB_DEV_USER'] %>
+  password: <%= ENV['PG_DB_DEV_PASS'] %>
+  host: localhost
+  port: 5432
+
+test:
+  <<: *default
+  database: actistaff-www_test
+
+production:
+  <<: *default
+  database: <%= ENV['ACTISTAFF-WWW_DB_PROD'] %>
+  username: <%= ENV['ACTISTAFF-WWW_DB_USERNAME'] %>
+  password: <%= ENV['ACTISTAFF-WWW_DB_PASSWORD'] %>
+  host: <%= ENV['ACTISTAFF-WWW_DB_HOST'] %>
+  port: <%= ENV['ACTISTAFF-WWW_DB_PORT'] %>
+  
