@@ -54,3 +54,4 @@ end
 
 gem 'haml', '4.0.6'
 gem 'simple_form', '3.1.0'
+gem 'high_voltage', '~> 2.3.0'

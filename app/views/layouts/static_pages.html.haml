@@ -1,0 +1,131 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "Ovation Experiential", :name => "author"}/
+    %meta{:content => "FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina", :name => "keyword"}/
+    = favicon_link_tag 'favicon.ico'
+    %title= yield(:page_title)
+
+    / Common Styles
+    = stylesheet_link_tag    'application', 'static_pages', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'static_pages', 'data-turbolinks-track' => true
+
+    / HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries
+    /[if lt IE 9]
+      = javascript_include_tag "html5shiv"
+      = javascript_include_tag "respond.min"
+  %body
+    / header start
+    %header.header-frontend
+      .navbar.navbar-default.navbar-static-top
+        .container
+          .navbar-header
+            %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+              %span.fa.fa-bars
+            %a.navbar-brand{:href => "index.html"}
+              Flat
+              %span Lab
+          .navbar-collapse.collapse
+            %ul.nav.navbar-nav
+              %li.active
+                %a{:href => "index.html"} Home
+              %li
+                %a{:href => "about.html"} About
+              %li
+                %a{:href => "services.html"} Service
+              %li.dropdown
+                %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"}
+                  Feature
+                  %b.fa.fa-angle-down
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "typography.html"} Typography
+                  %li
+                    %a{:href => "button.html"} Buttons
+              %li
+                %a{:href => "portfolio.html"} Portfolio
+              %li
+                %a{:href => "price.html"} Price
+              %li
+                %a{:href => "blog.html"} Blog
+              %li
+                %a{:href => "contact.html"} Contact
+              %li.dropdown.language
+                %a.dropdown-toggle{"data-close-others" => "true", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"}
+                  %img{:alt => "", :src => "img/flags/us.png"}/
+                  %span.username US
+                  %b.fa.fa-angle-down
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "img/flags/es.png"}/
+                      Spanish
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "img/flags/de.png"}/
+                      German
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "img/flags/ru.png"}/
+                      Russian
+                  %li
+                    %a{:href => "#"}
+                      %img{:alt => "", :src => "img/flags/fr.png"}/
+                      French
+              %li
+                %input.form-control.search{:placeholder => " Search", :type => "text"}/
+    / header end
+    = yield
+    / footer start
+    %footer.footer
+      .container
+        .row
+          .col-lg-3.col-sm-3
+            %h1 contact info
+            %address
+              %p Address: No.28-63877 street
+              %p lorem ipsum city, Country
+              %p Phone : (123) 456-7890
+              %p Fax : (123) 456-7890
+              %p
+                Email :
+                %a{:href => "javascript:;"} support@vectorlab.com
+          .col-lg-5.col-sm-5
+            %h1 latest tweet
+            .tweet-box
+              %i.fa.fa-twitter
+              %em
+                Please follow
+                %a{:href => "javascript:;"} @nettus
+                for all future updates of us!
+                %a{:href => "javascript:;"} twitter.com/vectorlab
+          .col-lg-3.col-sm-3.col-lg-offset-1
+            %h1 stay connected
+            %ul.social-link-footer.list-unstyled
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-facebook
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-google-plus
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-dribbble
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-linkedin
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-twitter
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-skype
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-github
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-youtube
