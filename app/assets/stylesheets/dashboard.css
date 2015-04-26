@@ -11,8 +11,8 @@
  * file per style scope.
  *
  *= require "jquery-easy-pie-chart/jquery.easy-pie-chart"
- *= require "owl.carousel"
- *= require "slidebars"
+ *= require "dashboard/owl.carousel"
+ *= require "dashboard/slidebars"
  *
  *= require_self
  */
