@@ -1,13 +1,10 @@
 <%= content_for :page_title, "Home - ActiStaff" %>
 
 <%= content_for :page_specific_styles do %>
-  / page specific styles go here
   <%= stylesheet_link_tag "fancybox/source/jquery.fancybox", "superfish", "superfish-vertical" %>
 
 <% end %>
 <%= content_for :page_specific_scripts do %>
-  /page specific javascript goes here
-
   <%= javascript_include_tag "fancybox/source/jquery.fancybox.pack", "bxslider/jquery.bxslider",
                              "superfish", "jquery.isotope" %>
   <%= javascript_include_tag "static_pages/jquery.flexslider", defer: "defer" %>
