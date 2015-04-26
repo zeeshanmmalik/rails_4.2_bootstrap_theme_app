@@ -11,14 +11,7 @@
 // about supported directives.
 //
 
-//= require "common/jquery-migrate-1.2.1.min"
 //= require "common/hover-dropdown"
-//= require "static_pages/jquery.flexslider"
 //= require "bxslider/jquery.bxslider"
-//= require "static_pages/jquery.parallax-1.1.3"
 //= require "static_pages/jquery.easing.min"
 //= require "static_pages/link-hover"
-//= require "fancybox/source/jquery.fancybox.pack"
-//= require "revolution_slider/rs-plugin/js/jquery.themepunch.plugins.min"
-//= require "revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min"
-//= require "static_pages/revulation-slide"

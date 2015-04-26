@@ -10,8 +10,11 @@
     %title= yield(:page_title)
 
     / Common Styles
-    = stylesheet_link_tag    'application', 'static_pages', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'application', 'static_pages', media: 'all',
+                             'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'static_pages', 'data-turbolinks-track' => true
+    = yield(:page_specific_scripts) if content_for?(:page_specific_scripts)
+    = yield(:page_specific_styles) if content_for?(:page_specific_styles)
 
     / HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries
     /[if lt IE 9]
@@ -23,17 +26,18 @@
       .navbar.navbar-default.navbar-static-top
         .container
           .navbar-header
-            %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+            %button.navbar-toggle{"data-target" => ".navbar-collapse",
+                                  "data-toggle" => "collapse", :type => "button"}
               %span.fa.fa-bars
-            %a.navbar-brand{:href => "index.html"}
-              Flat
-              %span Lab
+            %a.navbar-brand{:href => "home"}
+              Acti
+              %span Staff
           .navbar-collapse.collapse
             %ul.nav.navbar-nav
               %li.active
-                %a{:href => "index.html"} Home
+                = link_to "Home", page_path("home")
               %li
-                %a{:href => "about.html"} About
+                = link_to "About", page_path("about")
               %li
                 %a{:href => "services.html"} Service
               %li.dropdown
@@ -55,25 +59,25 @@
                 %a{:href => "contact.html"} Contact
               %li.dropdown.language
                 %a.dropdown-toggle{"data-close-others" => "true", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"}
-                  %img{:alt => "", :src => "img/flags/us.png"}/
+                  = image_tag "static_pages/flags/us.png"
                   %span.username US
                   %b.fa.fa-angle-down
                 %ul.dropdown-menu
                   %li
                     %a{:href => "#"}
-                      %img{:alt => "", :src => "img/flags/es.png"}/
+                      = image_tag "static_pages/flags/es.png"
                       Spanish
                   %li
                     %a{:href => "#"}
-                      %img{:alt => "", :src => "img/flags/de.png"}/
+                      = image_tag "static_pages/flags/de.png"
                       German
                   %li
                     %a{:href => "#"}
-                      %img{:alt => "", :src => "img/flags/ru.png"}/
+                      = image_tag "static_pages/flags/ru.png"
                       Russian
                   %li
                     %a{:href => "#"}
-                      %img{:alt => "", :src => "img/flags/fr.png"}/
+                      = image_tag "static_pages/flags/fr.png"
                       French
               %li
                 %input.form-control.search{:placeholder => " Search", :type => "text"}/

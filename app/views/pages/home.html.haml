@@ -1,10 +1,21 @@
-= content_for :page_title, 'Home - ActiStaff'
+= content_for :page_title, "Home - ActiStaff"
 
-=# content_for :page_specific_styles do
-/ page specific styles go here
+= content_for :page_specific_styles do
+  / page specific styles go here
+  = stylesheet_link_tag "fancybox/source/jquery.fancybox",
+                        "revolution_slider/css/rs-style",
+                        "revolution_slider/rs-plugin/css/settings"
   
 = content_for :page_specific_scripts do
   /page specific javascript goes here
+  = javascript_include_tag "common/jquery-migrate-1.2.1.min",
+                           "static_pages/jquery.parallax-1.1.3",
+                           "fancybox/source/jquery.fancybox.pack",
+                           "revolution_slider/rs-plugin/js/jquery.themepunch.plugins.min",
+                           "revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min",
+                           "static_pages/revulation-slide"
+  = javascript_include_tag "static_pages/jquery.flexslider", defer: "defer"
+
   :javascript
     RevSlide.initRevolutionSlider();
 
@@ -41,7 +52,7 @@
       / 1st slide
       %li{"data-delay" => "9400", "data-masterspeed" => "700", "data-slotamount" => "8", "data-thumb" => "", "data-transition" => "fade"}
         .caption.lfl.slide_item_left{"data-easing" => "easeOutBack", "data-speed" => "400", "data-start" => "1500", "data-x" => "10", "data-y" => "70"}
-          %img{:alt => "Image 1", :src => "img/banner/ban2.png"}/
+          = image_tag "static_pages/banner/ban2.png"
         .caption.lfr.slide_title{"data-easing" => "easeOutExpo", "data-speed" => "400", "data-start" => "1000", "data-x" => "670", "data-y" => "120"}
           Clean & Creative
         .caption.lfr.slide_subtitle.dark-text{"data-easing" => "easeOutExpo", "data-speed" => "400", "data-start" => "2000", "data-x" => "670", "data-y" => "190"}
@@ -57,7 +68,7 @@
       / 2nd slide
       %li{"data-delay" => "9400", "data-masterspeed" => "700", "data-slotamount" => "8", "data-thumb" => "", "data-transition" => "fade"}
         / THE MAIN IMAGE IN THE FIRST SLIDE
-        %img{:alt => "", :src => "img/banner/banner_bg.jpg"}/
+        = image_tag "static_pages/banner/banner_bg.jpg"
         .caption.lft.slide_title{"data-easing" => "easeOutExpo", "data-speed" => "400", "data-start" => "1500", "data-x" => "10", "data-y" => "125"}
           YAHOOOOO. TWO IN ONE
         .caption.lft.slide_subtitle.dark-text{"data-easing" => "easeOutExpo", "data-speed" => "400", "data-start" => "2000", "data-x" => "10", "data-y" => "180"}
@@ -71,22 +82,22 @@
         %a.caption.lft.slide_btn.btn.red.slide_item_left{"data-easing" => "easeOutExpo", "data-speed" => "400", "data-start" => "3000", "data-x" => "10", "data-y" => "360", :href => "#", :target => "_blank"}
           Purchase Now
         .caption.lft.start{"data-easing" => "easeOutBack", "data-speed" => "400", "data-start" => "2000", "data-x" => "640", "data-y" => "55"}
-          %img{:alt => "man", :src => "img/banner/man.png"}/
+          = image_tag "static_pages/banner/man.png"
         .caption.lft.slide_item_right{"data-easing" => "easeOutBack", "data-speed" => "500", "data-start" => "5000", "data-x" => "330", "data-y" => "20"}
-          %img#rev-hint2{:alt => "txt img", :src => "img/banner/test_man.png"}/
+          = image_tag "static_pages/banner/test_man.png", id: "rev-hint2"
       / 3rd slide
       %li{"data-delay" => "9400", "data-masterspeed" => "300", "data-slotamount" => "7", "data-thumb" => "", "data-transition" => "fade"}
-        %img{:alt => "", :src => "img/banner/red-bg.jpg"}/
+        = image_tag "static_pages/banner/red-bg.jpg"
         .caption.lfl.slide_item_right{"data-easing" => "easeOutBack", "data-speed" => "1200", "data-start" => "1500", "data-x" => "10", "data-y" => "105"}
-          %img{:alt => "Image 1", :src => "img/banner/imac.png"}/
+          = image_tag "static_pages/banner/imac.png"
         .caption.lfl.slide_item_right{"data-easing" => "easeOutBack", "data-speed" => "1200", "data-start" => "2000", "data-x" => "25", "data-y" => "345"}
-          %img{:alt => "Image 1", :src => "img/banner/tab.png"}/
+          = image_tag "static_pages/banner/tab.png"
         .caption.lfl.slide_item_right{"data-easing" => "easeOutBack", "data-speed" => "1200", "data-start" => "2500", "data-x" => "200", "data-y" => "330"}
-          %img{:alt => "Image 1", :src => "img/banner/mobile.png"}/
+          = image_tag "static_pages/banner/mobile.png"
         .caption.lfl.slide_item_right{"data-easing" => "easeOutBack", "data-speed" => "1200", "data-start" => "3000", "data-x" => "250", "data-y" => "230"}
-          %img{:alt => "Image 1", :src => "img/banner/laptop.png"}/
+          = image_tag "static_pages/banner/laptop.png"
         .caption.lfl.slide_item_right{"data-easing" => "easeOutBack", "data-speed" => "500", "data-start" => "5000", "data-x" => "165", "data-y" => "30"}
-          %img#rev-hint1{:alt => "Image 1", :src => "img/banner/text_imac.png"}/
+          = image_tag "static_pages/banner/text_imac.png", id: "rev-hint1"
         .caption.lfr.slide_title.slide_item_left.yellow-txt{"data-easing" => "easeOutExpo", "data-speed" => "400", "data-start" => "3500", "data-x" => "670", "data-y" => "145"}
           Full Responsive
         .caption.lfr.slide_subtitle.slide_item_left{"data-easing" => "easeOutExpo", "data-speed" => "400", "data-start" => "4000", "data-x" => "670", "data-y" => "200"}
@@ -141,7 +152,7 @@
   .container
     .row
       .col-lg-6.col-sm-6.text-center
-        %img{:alt => "", :src => "img/property-img.png"}/
+        = image_tag "static_pages/property-img.png"
       .col-lg-6.col-sm-6
         %h1 flat & modern trend design
         %p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener. natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ablic jiener. natus error sit voluptatem accusantiu.
@@ -168,19 +179,19 @@
             #news.tab-pane.active
               %article.media
                 %a.pull-left.thumb.p-thumb
-                  %img{:alt => "", :src => "img/product1.jpg"}/
+                  = image_tag "static_pages/product1.jpg"
                 .media-body
                   %a.p-head{:href => "#"} News Tittle goes here
                   %p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               %article.media
                 %a.pull-left.thumb.p-thumb
-                  %img{:alt => "", :src => "img/product2.png"}/
+                  = image_tag "static_pages/product2.png"
                 .media-body
                   %a.p-head{:href => "#"} News Tittle goes here 2
                   %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. simsut dorlor
               %article.media
                 %a.pull-left.thumb.p-thumb
-                  %img{:alt => "", :src => "img/product1.jpg"}/
+                  = image_tag "static_pages/product1.jpg"
                 .media-body
                   %a.p-head{:href => "#"} News Tittle goes here 3
                   %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. sumon ahmed
@@ -221,7 +232,7 @@
             %ul.slides.about-flex-slides
               %li
                 .about-testimonial-image
-                  %img{:alt => "", :src => "img/testimonial-img-1.jpg"}/
+                  = image_tag "static_pages/testimonial-img-1.jpg"
                 %a.about-testimonial-author{:href => "#"} Ericson Reagan
                 %span.about-testimonial-company ABC Realestate LLC
                 .about-testimonial-content
@@ -229,7 +240,7 @@
                     Pellentesque et pulvinar enim. Quisque at tempor ligula. Maecenas augue ante, euismod vitae egestas sit amet, accumsan eu nulla. Nullam tempor lectus a ligula lobortis pretium. Donec ut purus sed tortor malesuada venenatis eget eget lorem.
               %li
                 .about-testimonial-image
-                  %img{:alt => "", :src => "img/avatar2.jpg"}/
+                  = image_tag "static_pages/avatar2.jpg"
                 %a.about-testimonial-author{:href => "#"} Jonathan Smith
                 %span.about-testimonial-company DEF LLC
                 .about-testimonial-content
@@ -243,7 +254,7 @@
       %ul.bxslider
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-            %img{:alt => "", :src => "img/works/img1.jpg"}/
+            = image_tag "static_pages/works/img1.jpg"
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
@@ -251,7 +262,7 @@
                 %i.fa.fa-search
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-            %img{:alt => "", :src => "img/works/img2.jpg"}/
+            = image_tag "static_pages/works/img2.jpg"
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
@@ -259,7 +270,7 @@
                 %i.fa.fa-search
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-            %img{:alt => "", :src => "img/works/img3.jpg"}/
+            = image_tag "static_pages/works/img3.jpg"
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
@@ -267,7 +278,7 @@
                 %i.fa.fa-search
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-            %img{:alt => "", :src => "img/works/img4.jpg"}/
+            = image_tag "static_pages/works/img4.jpg"
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
@@ -275,7 +286,7 @@
                 %i.fa.fa-search
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-            %img{:alt => "", :src => "img/works/img5.jpg"}/
+            = image_tag "static_pages/works/img5.jpg"
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
@@ -283,7 +294,7 @@
                 %i.fa.fa-search
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-            %img{:alt => "", :src => "img/works/img6.jpg"}/
+            = image_tag "static_pages/works/img6.jpg"
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
@@ -291,7 +302,7 @@
                 %i.fa.fa-search
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-            %img{:alt => "", :src => "img/works/img7.jpg"}/
+            = image_tag "static_pages/works/img7.jpg"
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
@@ -299,7 +310,7 @@
                 %i.fa.fa-search
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-            %img{:alt => "", :src => "img/works/img1.jpg"}/
+            = image_tag "static_pages/works/img1.jpg"
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
@@ -324,18 +335,18 @@
           %ul.list-unstyled
             %li
               %a{:href => "#"}
-                %img{:alt => "", :src => "img/clients/logo1.png"}/
+                = image_tag "static_pages/clients/logo1.png"
             %li
               %a{:href => "#"}
-                %img{:alt => "", :src => "img/clients/logo2.png"}/
+                = image_tag "static_pages/clients/logo2.png"
             %li
               %a{:href => "#"}
-                %img{:alt => "", :src => "img/clients/logo3.png"}/
+                = image_tag "static_pages/clients/logo3.png"
             %li
               %a{:href => "#"}
-                %img{:alt => "", :src => "img/clients/logo4.png"}/
+                = image_tag "static_pages/clients/logo4.png"
             %li
               %a{:href => "#"}
-                %img{:alt => "", :src => "img/clients/logo5.png"}/
+                = image_tag "static_pages/clients/logo5.png"
   / clients end
 / container end

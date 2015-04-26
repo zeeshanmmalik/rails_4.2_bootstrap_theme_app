@@ -11,11 +11,7 @@
  * file per style scope.
  *
  *= require "static_pages/theme"
- *= require "static_pages/flexslider"
  *= require "bxslider/jquery.bxslider"
- *= require "fancybox/source/jquery.fancybox"
- *= require "revolution_slider/css/rs-style"
- *= require "revolution_slider/rs-plugin/css/settings"
  *
  *= require_self
  */
