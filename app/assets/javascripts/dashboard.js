@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-
 //= require "dashboard/jquery.dcjqaccordion.2.7"
 //= require "dashboard/jquery.scrollTo.min"
 //= require "dashboard/jquery.nicescroll"

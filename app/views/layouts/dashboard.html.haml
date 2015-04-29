@@ -30,9 +30,9 @@
         .sidebar-toggle-box
           .fa.fa-bars.tooltips{"data-original-title" => "Toggle Navigation", "data-placement" => "right"}
         / logo start
-        %a.logo{:href => "index.html"}
-          Flat
-          %span lab
+        %a.logo{:href => "#{ dashboard_path('dashboard_home')}"}
+          acti
+          %span staff
         / logo end
         #top_menu.nav.notify-row
           / notification start
@@ -220,7 +220,7 @@
           / sidebar menu start
           %ul#nav-accordion.sidebar-menu
             %li
-              %a.active{:href => "index.html"}
+              %a.active{:href => "#{ dashboard_path('dashboard_home') }"}
                 %i.fa.fa-dashboard
                 %span Dashboard
             %li.sub-menu
