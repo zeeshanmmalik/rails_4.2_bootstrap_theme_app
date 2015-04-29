@@ -1,9 +1,527 @@
 !!!
-%html
+%html{:lang => "en"}
   %head
-    %title Actistaff Dashboard
-    = stylesheet_link_tag    'application', 'dashboard', media: 'all', 'data-turbolinks-track' => true
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "Ovation Experiential", :name => "author"}/
+    %meta{:content => "FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina", :name => "keyword"}/
+    = favicon_link_tag 'favicon.ico'
+    %title= yield(:page_title)
+
+    / Common Styles
+    = stylesheet_link_tag    'application', 'dashboard', media: 'all',
+                             'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'dashboard', 'data-turbolinks-track' => true
+    = yield(:page_specific_scripts) if content_for?(:page_specific_scripts)
+    = yield(:page_specific_styles) if content_for?(:page_specific_styles)
+
+    / HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries
+    /[if lt IE 9]
+      = javascript_include_tag "html5shiv"
+      = javascript_include_tag "respond.min"
+
     = csrf_meta_tags
+
   %body
-    = yield
+    %section#container
+      / header start
+      %header.header.white-bg
+        .sidebar-toggle-box
+          .fa.fa-bars.tooltips{"data-original-title" => "Toggle Navigation", "data-placement" => "right"}
+        / logo start
+        %a.logo{:href => "index.html"}
+          Flat
+          %span lab
+        / logo end
+        #top_menu.nav.notify-row
+          / notification start
+          %ul.nav.top-menu
+            / settings start
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                %i.fa.fa-tasks
+                %span.badge.bg-success 6
+              %ul.dropdown-menu.extended.tasks-bar
+                .notify-arrow.notify-arrow-green
+                %li
+                  %p.green You have 6 pending tasks
+                %li
+                  %a{:href => "#"}
+                    .task-info
+                      .desc Dashboard v1.3
+                      .percent 40%
+                    .progress.progress-striped
+                      .progress-bar.progress-bar-success{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "40", :role => "progressbar", :style => "width: 40%"}
+                        %span.sr-only 40% Complete (success)
+                %li
+                  %a{:href => "#"}
+                    .task-info
+                      .desc Database Update
+                      .percent 60%
+                    .progress.progress-striped
+                      .progress-bar.progress-bar-warning{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "60", :role => "progressbar", :style => "width: 60%"}
+                        %span.sr-only 60% Complete (warning)
+                %li
+                  %a{:href => "#"}
+                    .task-info
+                      .desc Iphone Development
+                      .percent 87%
+                    .progress.progress-striped
+                      .progress-bar.progress-bar-info{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "20", :role => "progressbar", :style => "width: 87%"}
+                        %span.sr-only 87% Complete
+                %li
+                  %a{:href => "#"}
+                    .task-info
+                      .desc Mobile App
+                      .percent 33%
+                    .progress.progress-striped
+                      .progress-bar.progress-bar-danger{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "80", :role => "progressbar", :style => "width: 33%"}
+                        %span.sr-only 33% Complete (danger)
+                %li
+                  %a{:href => "#"}
+                    .task-info
+                      .desc Dashboard v1.3
+                      .percent 45%
+                    .progress.progress-striped.active
+                      .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "45", :role => "progressbar", :style => "width: 45%"}
+                        %span.sr-only 45% Complete
+                %li.external
+                  %a{:href => "#"} See All Tasks
+            / settings end
+            / inbox dropdown start
+            %li#header_inbox_bar.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                %i.fa.fa-envelope-o
+                %span.badge.bg-important 5
+              %ul.dropdown-menu.extended.inbox
+                .notify-arrow.notify-arrow-red
+                %li
+                  %p.red You have 5 new messages
+                %li
+                  %a{:href => "#"}
+                    %span.photo
+                      = image_tag "dashboard/avatar-mini.jpg"
+                    %span.subject
+                      %span.from Jonathan Smith
+                      %span.time Just now
+                    %span.message
+                      Hello, this is an example msg.
+                %li
+                  %a{:href => "#"}
+                    %span.photo
+                      = image_tag "dashboard/avatar-mini2.jpg"
+                    %span.subject
+                      %span.from Jhon Doe
+                      %span.time 10 mins
+                    %span.message
+                      Hi, Jhon Doe Bhai how are you ?
+                %li
+                  %a{:href => "#"}
+                    %span.photo
+                      = image_tag "dashboard/avatar-mini3.jpg"
+                    %span.subject
+                      %span.from Jason Stathum
+                      %span.time 3 hrs
+                    %span.message
+                      This is awesome dashboard.
+                %li
+                  %a{:href => "#"}
+                    %span.photo
+                      = image_tag "dashboard/avatar-mini4.jpg"
+                    %span.subject
+                      %span.from Jondi Rose
+                      %span.time Just now
+                    %span.message
+                      Hello, this is metrolab
+                %li
+                  %a{:href => "#"} See all messages
+            / inbox dropdown end
+            / notification dropdown start
+            %li#header_notification_bar.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                %i.fa.fa-bell-o
+                %span.badge.bg-warning 7
+              %ul.dropdown-menu.extended.notification
+                .notify-arrow.notify-arrow-yellow
+                %li
+                  %p.yellow You have 7 new notifications
+                %li
+                  %a{:href => "#"}
+                    %span.label.label-danger
+                      %i.fa.fa-bolt
+                    Server #3 overloaded.
+                    %span.small.italic 34 mins
+                %li
+                  %a{:href => "#"}
+                    %span.label.label-warning
+                      %i.fa.fa-bell
+                    Server #10 not respoding.
+                    %span.small.italic 1 Hours
+                %li
+                  %a{:href => "#"}
+                    %span.label.label-danger
+                      %i.fa.fa-bolt
+                    Database overloaded 24%.
+                    %span.small.italic 4 hrs
+                %li
+                  %a{:href => "#"}
+                    %span.label.label-success
+                      %i.fa.fa-plus
+                    New user registered.
+                    %span.small.italic Just now
+                %li
+                  %a{:href => "#"}
+                    %span.label.label-info
+                      %i.fa.fa-bullhorn
+                    Application error.
+                    %span.small.italic 10 mins
+                %li
+                  %a{:href => "#"} See all notifications
+            / notification dropdown end
+          / notification end
+        .top-nav
+          / search & user info start
+          %ul.nav.pull-right.top-menu
+            %li
+              %input.form-control.search{:placeholder => "Search", :type => "text"}/
+            / user login dropdown start
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                = image_tag "dashboard/avatar1_small.jpg" 
+                %span.username Jhon Doue
+                %b.caret
+              %ul.dropdown-menu.extended.logout
+                .log-arrow-up
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-suitcase>
+                    Profile
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-cog
+                    Settings
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-bell-o
+                    Notification
+                %li
+                  %a{:href => "login.html"}
+                    %i.fa.fa-key
+                    Log Out
+            %li.sb-toggle-right
+              %i.fa.fa-align-right
+            / user login dropdown end
+          / search & user info end
+      / header end
+      / sidebar start
+      %aside
+        #sidebar.nav-collapse
+          / sidebar menu start
+          %ul#nav-accordion.sidebar-menu
+            %li
+              %a.active{:href => "index.html"}
+                %i.fa.fa-dashboard
+                %span Dashboard
+            %li.sub-menu
+              %a{:href => "javascript:;"}
+                %i.fa.fa-laptop
+                %span Layouts
+              %ul.sub
+                %li
+                  %a{:href => "boxed_page.html"} Boxed Page
+                %li
+                  %a{:href => "horizontal_menu.html"} Horizontal Menu
+                %li
+                  %a{:href => "header-color.html"} Different Color Top bar
+                %li
+                  %a{:href => "mega_menu.html"} Mega Menu
+                %li
+                  %a{:href => "language_switch_bar.html"} Language Switch Bar
+                %li
+                  %a{:href => "email_template.html", :target => "_blank"} Email Template
+            %li.sub-menu
+              %a{:href => "javascript:;"}
+                %i.fa.fa-book
+                %span UI Elements
+              %ul.sub
+                %li
+                  %a{:href => "general.html"} General
+                %li
+                  %a{:href => "buttons.html"} Buttons
+                %li
+                  %a{:href => "modal.html"} Modal
+                %li
+                  %a{:href => "toastr.html"} Toastr Notifications
+                %li
+                  %a{:href => "widget.html"} Widget
+                %li
+                  %a{:href => "slider.html"} Slider
+                %li
+                  %a{:href => "nestable.html"} Nestable
+                %li
+                  %a{:href => "font_awesome.html"} Font Awesome
+            %li.sub-menu
+              %a{:href => "javascript:;"}
+                %i.fa.fa-cogs
+                %span Components
+              %ul.sub
+                %li
+                  %a{:href => "grids.html"} Grids
+                %li
+                  %a{:href => "calendar.html"} Calendar
+                %li
+                  %a{:href => "gallery.html"} Gallery
+                %li
+                  %a{:href => "todo_list.html"} Todo List
+                %li
+                  %a{:href => "draggable_portlet.html"} Draggable Portlet
+                %li
+                  %a{:href => "tree.html"} Tree View
+            %li.sub-menu
+              %a{:href => "javascript:;"}
+                %i.fa.fa-tasks
+                %span Form Stuff
+              %ul.sub
+                %li
+                  %a{:href => "form_component.html"} Form Components
+                %li
+                  %a{:href => "advanced_form_components.html"} Advanced Components
+                %li
+                  %a{:href => "form_wizard.html"} Form Wizard
+                %li
+                  %a{:href => "form_validation.html"} Form Validation
+                %li
+                  %a{:href => "dropzone.html"} Dropzone File Upload
+                %li
+                  %a{:href => "inline_editor.html"} Inline Editor
+                %li
+                  %a{:href => "image_cropping.html"} Image Cropping
+                %li
+                  %a{:href => "file_upload.html"} Multiple File Upload
+            %li.sub-menu
+              %a{:href => "javascript:;"}
+                %i.fa.fa-th
+                %span Data Tables
+              %ul.sub
+                %li
+                  %a{:href => "basic_table.html"} Basic Table
+                %li
+                  %a{:href => "responsive_table.html"} Responsive Table
+                %li
+                  %a{:href => "dynamic_table.html"} Dynamic Table
+                %li
+                  %a{:href => "editable_table.html"} Editable Table
+            %li.sub-menu
+              %a{:href => "javascript:;"}
+                %i.fa.fa-envelope
+                %span Mail
+              %ul.sub
+                %li
+                  %a{:href => "inbox.html"} Inbox
+                %li
+                  %a{:href => "inbox_details.html"} Inbox Details
+            %li.sub-menu
+              %a{:href => "javascript:;"}
+                %i.fa.fa-bar-chart-o
+                %span Charts
+              %ul.sub
+                %li
+                  %a{:href => "morris.html"} Morris
+                %li
+                  %a{:href => "chartjs.html"} Chartjs
+                %li
+                  %a{:href => "flot_chart.html"} Flot Charts
+                %li
+                  %a{:href => "xchart.html"} xChart
+            %li.sub-menu
+              %a{:href => "javascript:;"}
+                %i.fa.fa-shopping-cart
+                %span Shop
+              %ul.sub
+                %li
+                  %a{:href => "product_list.html"} List View
+                %li
+                  %a{:href => "product_details.html"} Details View
+            %li
+              %a{:href => "google_maps.html"}
+                %i.fa.fa-map-marker
+                %span Google Maps
+            %li.sub-menu
+              %a{:href => "javascript:;"}
+                %i.fa.fa-comments-o
+                %span Chat Room
+              %ul.sub
+                %li
+                  %a{:href => "lobby.html"} Lobby
+                %li
+                  %a{:href => "chat_room.html"} Chat Room
+            %li.sub-menu
+              %a{:href => "javascript:;"}
+                %i.fa.fa-glass
+                %span Extra
+              %ul.sub
+                %li
+                  %a{:href => "blank.html"} Blank Page
+                %li
+                  %a{:href => "sidebar_closed.html"} Sidebar Closed
+                %li
+                  %a{:href => "people_directory.html"} People Directory
+                %li
+                  %a{:href => "coming_soon.html"} Coming Soon
+                %li
+                  %a{:href => "lock_screen.html"} Lock Screen
+                %li
+                  %a{:href => "profile.html"} Profile
+                %li
+                  %a{:href => "invoice.html"} Invoice
+                %li
+                  %a{:href => "project_list.html"} Project List
+                %li
+                  %a{:href => "project_details.html"} Project Details
+                %li
+                  %a{:href => "search_result.html"} Search Result
+                %li
+                  %a{:href => "pricing_table.html"} Pricing Table
+                %li
+                  %a{:href => "faq.html"} FAQ
+                %li
+                  %a{:href => "fb_wall.html"} FB Wall
+                %li
+                  %a{:href => "404.html"} 404 Error
+                %li
+                  %a{:href => "500.html"} 500 Error
+            %li
+              %a{:href => "login.html"}
+                %i.fa.fa-user
+                %span Login Page
+            / multi level menu start
+            %li.sub-menu
+              %a{:href => "javascript:;"}
+                %i.fa.fa-sitemap
+                %span Multi level Menu
+              %ul.sub
+                %li
+                  %a{:href => "javascript:;"} Menu Item 1
+                %li.sub-menu
+                  %a{:href => "boxed_page.html"} Menu Item 2
+                  %ul.sub
+                    %li
+                      %a{:href => "javascript:;"} Menu Item 2.1
+                    %li.sub-menu
+                      %a{:href => "javascript:;"} Menu Item 3
+                      %ul.sub
+                        %li
+                          %a{:href => "javascript:;"} Menu Item 3.1
+                        %li
+                          %a{:href => "javascript:;"} Menu Item 3.2
+            / multi level menu end
+          / sidebar menu end
+      / sidebar end
+      / main content start
+      %section#main-content
+        = yield
+      / main content end
+      / Right Slidebar start
+      .sb-slidebar.sb-right.sb-style-overlay
+        %h5.side-title Online Customers
+        %ul.quick-chat-list
+          %li.online
+            .media
+              %a.pull-left.media-thumb{:href => "#"}
+                = image_tag "dashboard/chat-avatar2.jpg", class: "media-object"
+              .media-body
+                %strong John Doe
+                %small Dream Land, AU
+            / media
+          %li.online
+            .media
+              %a.pull-left.media-thumb{:href => "#"}
+                = image_tag "dashboard/chat-avatar.jpg", class: "media-object"
+              .media-body
+                .media-status
+                  %span.badge.bg-important 3
+                %strong Jonathan Smith
+                %small United States
+            / media
+          %li.online
+            .media
+              %a.pull-left.media-thumb{:href => "#"}
+                = image_tag "dashboard/pro-ac-1.png", class: "media-object"
+              .media-body
+                .media-status
+                  %span.badge.bg-success 5
+                %strong Jane Doe
+                %small ABC, USA
+            / media
+          %li.online
+            .media
+              %a.pull-left.media-thumb{:href => "#"}
+                = image_tag "dashboard/avatar1.jpg", class: "media-object"
+              .media-body
+                %strong Anjelina Joli
+                %small Fockland, UK
+            / media
+          %li.online
+            .media
+              %a.pull-left.media-thumb{:href => "#"}
+                = image_tag "dashboard/mail-avatar.jpg", class: "media-object"
+              .media-body
+                .media-status
+                  %span.badge.bg-warning 7
+                %strong Mr Tasi
+                %small Dream Land, USA
+            / media
+        %h5.side-title pending Task
+        %ul.p-task.tasks-bar
+          %li
+            %a{:href => "#"}
+              .task-info
+                .desc Dashboard v1.3
+                .percent 40%
+              .progress.progress-striped
+                .progress-bar.progress-bar-success{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "40", :role => "progressbar", :style => "width: 40%"}
+                  %span.sr-only 40% Complete (success)
+          %li
+            %a{:href => "#"}
+              .task-info
+                .desc Database Update
+                .percent 60%
+              .progress.progress-striped
+                .progress-bar.progress-bar-warning{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "60", :role => "progressbar", :style => "width: 60%"}
+                  %span.sr-only 60% Complete (warning)
+          %li
+            %a{:href => "#"}
+              .task-info
+                .desc Iphone Development
+                .percent 87%
+              .progress.progress-striped
+                .progress-bar.progress-bar-info{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "20", :role => "progressbar", :style => "width: 87%"}
+                  %span.sr-only 87% Complete
+          %li
+            %a{:href => "#"}
+              .task-info
+                .desc Mobile App
+                .percent 33%
+              .progress.progress-striped
+                .progress-bar.progress-bar-danger{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "80", :role => "progressbar", :style => "width: 33%"}
+                  %span.sr-only 33% Complete (danger)
+          %li
+            %a{:href => "#"}
+              .task-info
+                .desc Dashboard v1.3
+                .percent 45%
+              .progress.progress-striped.active
+                .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "45", :role => "progressbar", :style => "width: 45%"}
+                  %span.sr-only 45% Complete
+          %li.external
+            %a{:href => "#"} See All Tasks
+      / Right Slidebar end
+      / footer start
+      %footer.site-footer
+        .text-center
+          2013 © FlatLab by VectorLab.
+          %a.go-top{:href => "#"}
+            %i.fa.fa-angle-up
+      / footer end
+

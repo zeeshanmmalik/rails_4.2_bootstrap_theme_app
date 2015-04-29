@@ -13,4 +13,5 @@ Rails.application.config.assets.precompile += %w( static_pages.css dashboard.css
                                                   static_pages.js dashboard.js 
                                                   static_pages/* dashboard/* common/* 
                                                   fancybox/* revolution_slider/* bxslider/*
+                                                  jquery-easy-pie-chart/*
                                                   *.png *.jpg *.jpeg *.gif )

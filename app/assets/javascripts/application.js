@@ -15,6 +15,6 @@
 //= require turbolinks
 
 //= require common/bootstrap.min
-//= require "common/common-scripts"
+
 
 

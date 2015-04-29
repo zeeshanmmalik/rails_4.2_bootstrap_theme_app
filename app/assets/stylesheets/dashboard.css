@@ -10,8 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require "jquery-easy-pie-chart/jquery.easy-pie-chart"
- *= require "dashboard/owl.carousel"
+ *= require "dashboard/style"
+ *= require "dashboard/style-responsive"
  *= require "dashboard/slidebars"
  *
  *= require_self

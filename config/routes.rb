@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   # static pages
   get "/pages/*id" => 'pages#show', as: :page, format: false
 
+  # dashboard theme pages
+  get "/dashboard/*id" => 'dashboard#show', as: :dashboard, format: false
+
   # You can have the root of your site routed with "root"
   root to: 'pages#show', id: 'home'
 

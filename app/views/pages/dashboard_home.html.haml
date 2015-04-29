@@ -1,0 +1,511 @@
+= content_for :page_title, "Dashboard Home - ActiStaff"
+
+= content_for :page_specific_styles do
+  / page specific styles go here
+  = stylesheet_link_tag "jquery-easy-pie-chart/jquery.easy-pie-chart",
+                        "dashboard/owl.carousel"
+  
+= content_for :page_specific_scripts do
+  /page specific javascript goes here
+  = javascript_include_tag "dashboard/jquery.sparkline",
+                           "jquery-easy-pie-chart/jquery.easy-pie-chart",
+                           "dashboard/owl.carousel",
+                           "dashboard/jquery.customSelect.min",
+                           "dashboard/sparkline-chart",
+                           "dashboard/easy-pie-chart",
+                           "dashboard/count"
+
+
+  :javascript
+    //owl carousel
+      
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
+        navigation : true,
+        slideSpeed : 300,
+        paginationSpeed : 400,
+        singleItem : true,
+        autoPlay:true
+      });
+    });
+      
+    //custom select box
+      
+    $(function(){
+      $('select.styled').customSelect();
+    });
+
+
+%section.wrapper
+  / state overview start
+  .row.state-overview
+    .col-lg-3.col-sm-6
+      %section.panel
+        .symbol.terques
+          %i.fa.fa-user
+        .value
+          %h1.count
+            0
+          %p New Users
+    .col-lg-3.col-sm-6
+      %section.panel
+        .symbol.red
+          %i.fa.fa-tags
+        .value
+          %h1.count2
+            0
+          %p Sales
+    .col-lg-3.col-sm-6
+      %section.panel
+        .symbol.yellow
+          %i.fa.fa-shopping-cart
+        .value
+          %h1.count3
+            0
+          %p New Order
+    .col-lg-3.col-sm-6
+      %section.panel
+        .symbol.blue
+          %i.fa.fa-bar-chart-o
+        .value
+          %h1.count4
+            0
+          %p Total Profit
+  / state overview end
+  .row
+    .col-lg-8
+      / custom chart start
+      .border-head
+        %h3 Earning Graph
+      .custom-bar-chart
+        %ul.y-axis
+          %li
+            %span 100
+          %li
+            %span 80
+          %li
+            %span 60
+          %li
+            %span 40
+          %li
+            %span 20
+          %li
+            %span 0
+        .bar
+          .title JAN
+          .value.tooltips{"data-original-title" => "80%", "data-placement" => "top", "data-toggle" => "tooltip"} 80%
+        .bar
+          .title FEB
+          .value.tooltips{"data-original-title" => "50%", "data-placement" => "top", "data-toggle" => "tooltip"} 50%
+        .bar
+          .title MAR
+          .value.tooltips{"data-original-title" => "40%", "data-placement" => "top", "data-toggle" => "tooltip"} 40%
+        .bar
+          .title APR
+          .value.tooltips{"data-original-title" => "55%", "data-placement" => "top", "data-toggle" => "tooltip"} 55%
+        .bar
+          .title MAY
+          .value.tooltips{"data-original-title" => "20%", "data-placement" => "top", "data-toggle" => "tooltip"} 20%
+        .bar
+          .title JUN
+          .value.tooltips{"data-original-title" => "39%", "data-placement" => "top", "data-toggle" => "tooltip"} 39%
+        .bar
+          .title JUL
+          .value.tooltips{"data-original-title" => "75%", "data-placement" => "top", "data-toggle" => "tooltip"} 75%
+        .bar
+          .title AUG
+          .value.tooltips{"data-original-title" => "45%", "data-placement" => "top", "data-toggle" => "tooltip"} 45%
+        .bar
+          .title SEP
+          .value.tooltips{"data-original-title" => "50%", "data-placement" => "top", "data-toggle" => "tooltip"} 50%
+        .bar
+          .title OCT
+          .value.tooltips{"data-original-title" => "42%", "data-placement" => "top", "data-toggle" => "tooltip"} 42%
+        .bar
+          .title NOV
+          .value.tooltips{"data-original-title" => "60%", "data-placement" => "top", "data-toggle" => "tooltip"} 60%
+        .bar
+          .title DEC
+          .value.tooltips{"data-original-title" => "90%", "data-placement" => "top", "data-toggle" => "tooltip"} 90%
+      / custom chart end
+    .col-lg-4
+      / new earning start
+      .panel.terques-chart
+        .panel-body.chart-texture
+          .chart
+            .heading
+              %span Friday
+              %strong $ 57,00 | 15%
+            .sparkline{"data-data" => "[200,135,667,333,526,996,564,123,890,564,455]", "data-fill-color" => "", "data-height" => "75", "data-highlight-line-color" => "#fff", "data-line-color" => "#fff", "data-line-width" => "1", "data-resize" => "true", "data-spot-color" => "#fff", "data-spot-radius" => "4", "data-type" => "line", "data-width" => "90%"}
+        .chart-tittle
+          %span.title New Earning
+          %span.value
+            %a.active{:href => "#"} Market
+            |
+            %a{:href => "#"} Referal
+            |
+            %a{:href => "#"} Online
+      / new earning end
+      / total earning start
+      .panel.green-chart
+        .panel-body
+          .chart
+            .heading
+              %span June
+              %strong 23 Days | 65%
+            #barchart
+        .chart-tittle
+          %span.title Total Earning
+          %span.value $, 76,54,678
+      / total earning end
+  .row
+    .col-lg-4
+      / user info table start
+      %section.panel
+        .panel-body
+          %a.task-thumb{:href => "#"}
+            = image_tag "dashboard/avatar1.jpg"
+          .task-thumb-details
+            %h1
+              %a{:href => "#"} Anjelina Joli
+            %p Senior Architect
+        %table.table.table-hover.personal-task
+          %tbody
+            %tr
+              %td
+                %i.fa.fa-tasks
+              %td New Task Issued
+              %td 02
+            %tr
+              %td
+                %i.fa.fa-exclamation-triangle
+              %td Task Pending
+              %td 14
+            %tr
+              %td
+                %i.fa.fa-envelope
+              %td Inbox
+              %td 45
+            %tr
+              %td
+                %i.fa.fa-bell-o
+              %td New Notification
+              %td 09
+      / user info table end
+    .col-lg-8
+      / work progress start
+      %section.panel
+        .panel-body.progress-panel
+          .task-progress
+            %h1 Work Progress
+            %p Anjelina Joli
+          .task-option
+            %select.styled
+              %option Anjelina Joli
+              %option Tom Crouse
+              %option Jhon Due
+        %table.table.table-hover.personal-task
+          %tbody
+            %tr
+              %td 1
+              %td
+                Target Sell
+              %td
+                %span.badge.bg-important 75%
+              %td
+                #work-progress1
+            %tr
+              %td 2
+              %td
+                Product Delivery
+              %td
+                %span.badge.bg-success 43%
+              %td
+                #work-progress2
+            %tr
+              %td 3
+              %td
+                Payment Collection
+              %td
+                %span.badge.bg-info 67%
+              %td
+                #work-progress3
+            %tr
+              %td 4
+              %td
+                Work Progress
+              %td
+                %span.badge.bg-warning 30%
+              %td
+                #work-progress4
+            %tr
+              %td 5
+              %td
+                Delivery Pending
+              %td
+                %span.badge.bg-primary 15%
+              %td
+                #work-progress5
+      / work progress end
+  .row
+    .col-lg-8
+      / timeline start
+      %section.panel
+        .panel-body
+          .text-center.mbot30
+            %h3.timeline-title Timeline
+            %p.t-info This is a project timeline
+          .timeline
+            %article.timeline-item
+              .timeline-desk
+                .panel
+                  .panel-body
+                    %span.arrow
+                    %span.timeline-icon.red
+                    %span.timeline-date 08:25 am
+                    %h1.red 12 July | Sunday
+                    %p Lorem ipsum dolor sit amet consiquest dio
+            %article.timeline-item.alt
+              .timeline-desk
+                .panel
+                  .panel-body
+                    %span.arrow-alt
+                    %span.timeline-icon.green
+                    %span.timeline-date 10:00 am
+                    %h1.green 10 July | Wednesday
+                    %p
+                      %a{:href => "#"} Jonathan Smith
+                      added new milestone
+                      %span
+                        %a.green{:href => "#"} ERP
+            %article.timeline-item
+              .timeline-desk
+                .panel
+                  .panel-body
+                    %span.arrow
+                    %span.timeline-icon.blue
+                    %span.timeline-date 11:35 am
+                    %h1.blue 05 July | Monday
+                    %p
+                      %a{:href => "#"} Anjelina Joli
+                      added new album
+                      %span
+                        %a.blue{:href => "#"} PARTY TIME
+                    .album
+                      %a{:href => "#"}
+                        = image_tag "dashboard/sm-img-1.jpg"
+                      %a{:href => "#"}
+                        = image_tag "dashboard/sm-img-2.jpg"
+                      %a{:href => "#"}
+                        = image_tag "dashboard/sm-img-3.jpg"
+                      %a{:href => "#"}
+                        = image_tag "dashboard/sm-img-1.jpg"
+                      %a{:href => "#"}
+                        = image_tag "dashboard/sm-img-2.jpg"
+            %article.timeline-item.alt
+              .timeline-desk
+                .panel
+                  .panel-body
+                    %span.arrow-alt
+                    %span.timeline-icon.purple
+                    %span.timeline-date 3:20 pm
+                    %h1.purple 29 June | Saturday
+                    %p Lorem ipsum dolor sit amet consiquest dio
+                    .notification
+                      %i.fa.fa-exclamation-sign
+                      New task added for
+                      %a{:href => "#"} Denial Collins
+            %article.timeline-item
+              .timeline-desk
+                .panel
+                  .panel-body
+                    %span.arrow
+                    %span.timeline-icon.light-green
+                    %span.timeline-date 07:49 pm
+                    %h1.light-green 10 June | Friday
+                    %p
+                      %a{:href => "#"} Jonatha Smith
+                      added new milestone
+                      %span
+                        %a.light-green{:href => "#"} prank
+                      Lorem ipsum dolor sit amet consiquest dio
+          .clearfix  
+      / timeline end
+    .col-lg-4
+      / revenue start
+      %section.panel
+        .revenue-head
+          %span
+            %i.fa.fa-bar-chart-o
+          %h3 Revenue
+          %span.rev-combo.pull-right
+            June 2013
+        .panel-body
+          .row
+            .col-lg-6.col-sm-6.text-center
+              .easy-pie-chart
+                .percentage{"data-percent" => "35"}
+                  %span> 35
+                  \%
+            .col-lg-6.col-sm-6
+              .chart-info.chart-position
+                %span.increase
+                %span Revenue Increase
+              .chart-info
+                %span.decrease
+                %span Revenue Decrease
+        .panel-footer.revenue-foot
+          %ul
+            %li.first.active
+              %a{:href => "javascript:;"}
+                %i.fa.fa-bullseye
+                Graphical
+            %li
+              %a{:href => "javascript:;"}
+                %i.fa.fa-th-large
+                Tabular
+            %li.last
+              %a{:href => "javascript:;"}
+                %i.fa.fa-align-justify
+                Listing
+      / revenue end
+      / features carousel start
+      %section.panel
+        .flat-carousal
+          #owl-demo.owl-carousel.owl-theme
+            .item
+              %h1 Flatlab is new model of admin dashboard for happy use
+              .text-center
+                %a.view-all{:href => "javascript:;"} View All
+            .item
+              %h1 Fully responsive and build with Bootstrap 3.0
+              .text-center
+                %a.view-all{:href => "javascript:;"} View All
+            .item
+              %h1 Responsive Frontend is free if you get this.
+              .text-center
+                %a.view-all{:href => "javascript:;"} View All
+        .panel-body
+          %ul.ft-link
+            %li.active
+              %a{:href => "javascript:;"}
+                %i.fa.fa-bars
+                Sales
+            %li
+              %a{:href => "javascript:;"}
+                %i.fa.fa-calendar-o
+                promo
+            %li
+              %a{:href => "javascript:;"}
+                %i.fa.fa-camera
+                photo
+            %li
+              %a{:href => "javascript:;"}
+                %i.fa.fa-circle
+                other
+      / features carousel end
+  .row
+    .col-lg-8
+      / latest product info start
+      %section.panel.post-wrap.pro-box
+        %aside
+          .post-info
+            %span.arrow-pro.right
+            .panel-body
+              %h1
+                %strong popular
+                %br/
+                Brand of this week
+              .desk.yellow
+                %h3 Dimond Ring
+                %p Lorem ipsum dolor set amet lorem ipsum dolor set amet ipsum dolor set amet
+              .post-btn
+                %a{:href => "javascript:;"}
+                  %i.fa.fa-chevron-circle-left
+                %a{:href => "javascript:;"}
+                  %i.fa.fa-chevron-circle-right
+        %aside.post-highlight.yellow.v-align
+          .panel-body.text-center
+            .pro-thumb
+              = image_tag "dashboard/ring.jpg"
+      / latest product info end
+      / twitter feedback start
+      %section.panel.post-wrap.pro-box
+        %aside.post-highlight.terques.v-align
+          .panel-body
+            %h2
+              Flatlab is new model of admin dashboard
+              %a{:href => "javascript:;"} http://demo.com/
+              4 days ago  by jonathan smith
+        %aside
+          .post-info
+            %span.arrow-pro.left
+            .panel-body
+              .text-center.twite
+                %h1 Twitter Feed
+              %footer.social-footer
+                %ul
+                  %li
+                    %a{:href => "#"}
+                      %i.fa.fa-facebook
+                  %li.active
+                    %a{:href => "#"}
+                      %i.fa.fa-twitter
+                  %li
+                    %a{:href => "#"}
+                      %i.fa.fa-google-plus
+                  %li
+                    %a{:href => "#"}
+                      %i.fa.fa-pinterest
+      / twitter feedback end
+    .col-lg-4
+      .row
+        .col-xs-6
+          / pie chart start
+          %section.panel
+            .panel-body
+              .chart
+                #pie-chart
+            %footer.pie-foot
+              Free: 260GB
+          / pie chart start
+        .col-xs-6
+          / follower start
+          %section.panel
+            .follower
+              .panel-body
+                %h4 Jonathan Smith
+                .follow-ava
+                  = image_tag "dashboard/follower-avatar.jpg"
+            %footer.follower-foot
+              %ul
+                %li
+                  %h5 2789
+                  %p Follower
+                %li
+                  %h5 270
+                  %p Following
+          / follower end
+      / weather statement start
+      %section.panel
+        .weather-bg
+          .panel-body
+            .row
+              .col-xs-6
+                %i.fa.fa-cloud
+                California
+              .col-xs-6
+                .degree
+                  24°
+        %footer.weather-category
+          %ul
+            %li.active
+              %h5 humidity
+              56%
+            %li
+              %h5 precip
+              1.50 in
+            %li
+              %h5 winds
+              10 mph
+      / weather statement end

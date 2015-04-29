@@ -13,8 +13,6 @@
  *= require "common/bootstrap.min"
  *= require "common/bootstrap-reset"
  *= require "font-awesome/css/font-awesome"
- *= require "common/style"
- *= require "common/style-responsive"
 
  *= require_self
  */
