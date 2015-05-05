@@ -1,0 +1,95 @@
+/ Right Slidebar start
+.sb-slidebar.sb-right.sb-style-overlay
+  %h5.side-title Online Customers
+  %ul.quick-chat-list
+    %li.online
+      .media
+        %a.pull-left.media-thumb{:href => "#"}
+          = image_tag "dashboard/chat-avatar2.jpg", class: "media-object"
+        .media-body
+          %strong John Doe
+          %small Dream Land, AU
+      / media
+    %li.online
+      .media
+        %a.pull-left.media-thumb{:href => "#"}
+          = image_tag "dashboard/chat-avatar.jpg", class: "media-object"
+        .media-body
+          .media-status
+            %span.badge.bg-important 3
+          %strong Jonathan Smith
+          %small United States
+      / media
+    %li.online
+      .media
+        %a.pull-left.media-thumb{:href => "#"}
+          = image_tag "dashboard/pro-ac-1.png", class: "media-object"
+        .media-body
+          .media-status
+            %span.badge.bg-success 5
+          %strong Jane Doe
+          %small ABC, USA
+      / media
+    %li.online
+      .media
+        %a.pull-left.media-thumb{:href => "#"}
+          = image_tag "dashboard/avatar1.jpg", class: "media-object"
+        .media-body
+          %strong Anjelina Joli
+          %small Fockland, UK
+      / media
+    %li.online
+      .media
+        %a.pull-left.media-thumb{:href => "#"}
+          = image_tag "dashboard/mail-avatar.jpg", class: "media-object"
+        .media-body
+          .media-status
+            %span.badge.bg-warning 7
+          %strong Mr Tasi
+          %small Dream Land, USA
+      / media
+  %h5.side-title pending Task
+  %ul.p-task.tasks-bar
+    %li
+      %a{:href => "#"}
+        .task-info
+          .desc Dashboard v1.3
+          .percent 40%
+        .progress.progress-striped
+          .progress-bar.progress-bar-success{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "40", :role => "progressbar", :style => "width: 40%"}
+            %span.sr-only 40% Complete (success)
+    %li
+      %a{:href => "#"}
+        .task-info
+          .desc Database Update
+          .percent 60%
+        .progress.progress-striped
+          .progress-bar.progress-bar-warning{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "60", :role => "progressbar", :style => "width: 60%"}
+            %span.sr-only 60% Complete (warning)
+    %li
+      %a{:href => "#"}
+        .task-info
+          .desc Iphone Development
+          .percent 87%
+        .progress.progress-striped
+          .progress-bar.progress-bar-info{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "20", :role => "progressbar", :style => "width: 87%"}
+            %span.sr-only 87% Complete
+    %li
+      %a{:href => "#"}
+        .task-info
+          .desc Mobile App
+          .percent 33%
+        .progress.progress-striped
+          .progress-bar.progress-bar-danger{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "80", :role => "progressbar", :style => "width: 33%"}
+            %span.sr-only 33% Complete (danger)
+    %li
+      %a{:href => "#"}
+        .task-info
+          .desc Dashboard v1.3
+          .percent 45%
+        .progress.progress-striped.active
+          .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "45", :role => "progressbar", :style => "width: 45%"}
+            %span.sr-only 45% Complete
+    %li.external
+      %a{:href => "#"} See All Tasks
+/ Right Slidebar end

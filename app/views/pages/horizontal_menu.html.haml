@@ -1,0 +1,283 @@
+= content_for :page_title, "Horizontal Menu - ActiStaff"
+
+%body.full-width
+  %section#container
+    / header start
+    %header.header.white-bg
+      .navbar-header
+        %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+          %span.fa.fa-bars
+        / logo start
+        %a.logo{:href => "#{dashboard_path('dashboard_home')}"}
+          Acti
+          %span Staff
+        / logo end
+        .horizontal-menu.navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            %li
+              = link_to "Dashboard", dashboard_path("dashboard_home")
+            %li.active
+              %a{:href => "#"} Components
+            %li.dropdown
+              %a.dropdown-toggle{"data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"}
+                UI Element
+                %b.fa.fa-angle-down
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "general.html"} General
+                %li
+                  %a{:href => "buttons.html"} Buttons
+                %li
+                  %a{:href => "widget.html"} Widget
+                %li
+                  %a{:href => "slider.html"} Slider
+                %li
+                  %a{:href => "nestable.html"} Nestable
+                %li
+                  %a{:href => "font_awesome.html"} Font Awesome
+            %li
+              %a{:href => "basic_table.html"} Tables
+            %li.dropdown
+              %a.dropdown-toggle{"data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"}
+                Extra
+                %b.fa.fa-angle-down
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "blank.html"} Blank Page
+                %li
+                  %a{:href => "boxed_page.html"} Boxed Page
+                %li
+                  %a{:href => "profile.html"} Profile
+                %li
+                  %a{:href => "invoice.html"} Invoice
+                %li
+                  %a{:href => "search_result.html"} Search Result
+                %li
+                  %a{:href => "404.html"} 404 Error Page
+                %li
+                  %a{:href => "500.html"} 500 Error Page
+        .top-nav
+          %ul.nav.pull-right.top-menu
+            %li
+              %input.form-control.search{:placeholder => " Search", :type => "text"}/
+            / user login dropdown start
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                = image_tag "dashboard/avatar1_small.jpg"
+                %span.username Jhon Doue
+                %b.caret
+              %ul.dropdown-menu.extended.logout
+                .log-arrow-up
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-suitcase>
+                    Profile
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-cog
+                    Settings
+                %li
+                  %a{:href => "#"}
+                    %i.fa.fa-bell-o
+                    Notification
+                %li
+                  %a{:href => "login.html"}
+                    %i.fa.fa-key
+                    Log Out
+            / user login dropdown end
+    / header end
+    / sidebar start
+    / sidebar end
+    / main content start
+    %section#main-content
+      %section.wrapper
+        / page start
+        .row
+          .col-lg-12
+            / breadcrumbs start
+            %ul.breadcrumb
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-home
+                  Home
+              %li
+                %a{:href => "#"} Library
+              %li.active Data
+            / breadcrumbs end
+        .row
+          .col-lg-6
+            #accordion.panel-group.m-bot20
+              .panel.panel-default
+                .panel-heading
+                  %h4.panel-title
+                    %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseOne"}
+                      Collapsible Group Item #1
+                #collapseOne.panel-collapse.collapse.in
+                  .panel-body
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              .panel.panel-default
+                .panel-heading
+                  %h4.panel-title
+                    %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseTwo"}
+                      Collapsible Group Item #2
+                #collapseTwo.panel-collapse.collapse
+                  .panel-body
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              .panel.panel-default
+                .panel-heading
+                  %h4.panel-title
+                    %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseThree"}
+                      Collapsible Group Item #3
+                #collapseThree.panel-collapse.collapse
+                  .panel-body
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          .col-lg-6
+            %section.panel
+              %header.panel-heading
+                Heading goes here
+                %span.tools.pull-right
+                  %a.fa.fa-chevron-down{:href => "javascript:;"}
+                  %a.fa.fa-times{:href => "javascript:;"}
+              .panel-body
+                %p
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                %p
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor
+        .row
+          .col-lg-6
+            %section.panel
+              %header.panel-heading
+                Timeline
+                %span.tools.pull-right
+                  %a.fa.fa-chevron-down{:href => "javascript:;"}
+                  %a.fa.fa-times{:href => "javascript:;"}
+              .panel-body.profile-activity
+                %h5.pull-right 12 August 2013
+                .activity.terques
+                  %span
+                    %i.fa.fa-shopping-cart
+                  .activity-desk
+                    .panel
+                      .panel-body
+                        .arrow
+                        %i.fa.fa-time
+                        %h4 10:45 AM
+                        %p Purchased new equipments for zonal office setup and stationaries.
+                .activity.alt.purple
+                  %span
+                    %i.fa.fa-rocket
+                  .activity-desk
+                    .panel
+                      .panel-body
+                        .arrow-alt
+                        %i.fa.fa-time
+                        %h4 12:30 AM
+                        %p Lorem ipsum dolor sit amet consiquest dio
+                .activity.blue
+                  %span
+                    %i.fa.fa-bullhorn
+                  .activity-desk
+                    .panel
+                      .panel-body
+                        .arrow
+                        %i.fa.fa-time
+                        %h4 10:45 AM
+                        %p Please note which location you will consider, or both. Reporting to the VP  you will be responsible for managing..
+                .activity.alt.green
+                  %span
+                    %i.fa.fa-beer
+                  .activity-desk
+                    .panel
+                      .panel-body
+                        .arrow-alt
+                        %i.fa.fa-time
+                        %h4 12:30 AM
+                        %p Please note which location you will consider, or both.
+          .col-lg-6
+            %section.panel
+              %header.panel-heading
+                Chats
+                %span.tools.pull-right
+                  %a.fa.fa-chevron-down{:href => "javascript:;"}
+                  %a.fa.fa-times{:href => "javascript:;"}
+              .panel-body
+                .timeline-messages
+                  / Comment
+                  .msg-time-chat
+                    %a.message-img{:href => "#"}
+                      = image_tag "dashboard/chat-avatar.jpg", class: "avatar"
+                    .message-body.msg-in
+                      %span.arrow
+                      .text
+                        %p.attribution
+                          %a{:href => "#"} Jhon Doe
+                          at 1:55pm, 13th April 2013
+                        %p Hello, How are you brother?
+                  / /comment
+                  / Comment
+                  .msg-time-chat
+                    %a.message-img{:href => "#"}
+                      = image_tag "dashboard/chat-avatar2.jpg", class: "avatar"
+                    .message-body.msg-out
+                      %span.arrow
+                      .text
+                        %p.attribution
+                          %a{:href => "#"} Jonathan Smith
+                          at 2:01pm, 13th April 2013
+                        %p I'm Fine, Thank you. What about you? How is going on?
+                  / /comment
+                  / Comment
+                  .msg-time-chat
+                    %a.message-img{:href => "#"}
+                      = image_tag "dashboard/chat-avatar.jpg", class: "avatar"
+                    .message-body.msg-in
+                      %span.arrow
+                      .text
+                        %p.attribution
+                          %a{:href => "#"} Jhon Doe
+                          at 2:03pm, 13th April 2013
+                        %p Yeah I'm fine too. Everything is going fine here.
+                  / /comment
+                  / Comment
+                  .msg-time-chat
+                    %a.message-img{:href => "#"}
+                      = image_tag "dashboard/chat-avatar2.jpg", class: "avatar"
+                    .message-body.msg-out
+                      %span.arrow
+                      .text
+                        %p.attribution
+                          %a{:href => "#"} Jonathan Smith
+                          at 2:05pm, 13th April 2013
+                        %p well good to know that. anyway how much time you need to done your task?
+                  / /comment
+                  / Comment
+                  .msg-time-chat
+                    %a.message-img{:href => "#"}
+                      = image_tag "dashboard/chat-avatar.jpg", class: "avatar"
+                    .message-body.msg-in
+                      %span.arrow
+                      .text
+                        %p.attribution
+                          %a{:href => "#"} Jhon Doe
+                          at 1:55pm, 13th April 2013
+                        %p Hello, How are you brother?
+                  / /comment
+                .chat-form
+                  .input-cont
+                    %input.form-control.col-lg-12{:placeholder => "Type a message here...", :type => "text"}/
+                  .form-group
+                    .pull-right.chat-features
+                      %a{:href => "javascript:;"}
+                        %i.fa.fa-camera
+                      %a{:href => "javascript:;"}
+                        %i.fa.fa-link
+                      %a.btn.btn-danger{:href => "javascript:;"} Send
+        / page end
+    / main content end
+    / footer start
+    %footer.site-footer
+      .text-center
+        2013 © FlatLab by VectorLab.
+        %a.go-top{:href => "#"}
+          %i.fa.fa-angle-up
+    / footer end

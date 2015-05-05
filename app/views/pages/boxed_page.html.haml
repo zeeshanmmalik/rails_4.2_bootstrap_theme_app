@@ -1,0 +1,18 @@
+= content_for :page_title, "Boxed Page - ActiStaff"
+
+%body.boxed-page
+  .container
+    %section#container
+      = render "layouts/dashboard_top_header"
+      = render "layouts/dashboard_sidebar_nav"
+      / main content start
+      %section#main-content
+        / main content start
+        %section.wrapper
+          page content goes here
+        / main content end
+      / main content end
+      = render "layouts/dashboard_right_sidebar"
+      = render "layouts/dashboard_footer"
+
+

@@ -1,0 +1,204 @@
+/ sidebar start
+%aside
+  #sidebar.nav-collapse
+    / sidebar menu start
+    %ul#nav-accordion.sidebar-menu
+      %li
+        %a.active{:href => "#{ dashboard_path('dashboard_home') }"}
+          %i.fa.fa-dashboard
+          %span Dashboard
+      %li.sub-menu
+        %a{:href => "javascript:;"}
+          %i.fa.fa-laptop
+          %span Layouts
+        %ul.sub
+          %li
+            = link_to "Boxed Page", dashboard_path("boxed_page")
+          %li
+            = link_to "Horizontal Menu", dashboard_path("horizontal_menu")
+          %li
+            %a{:href => "header-color.html"} Different Color Top bar
+          %li
+            %a{:href => "mega_menu.html"} Mega Menu
+          %li
+            %a{:href => "language_switch_bar.html"} Language Switch Bar
+          %li
+            %a{:href => "email_template.html", :target => "_blank"} Email Template
+      %li.sub-menu
+        %a{:href => "javascript:;"}
+          %i.fa.fa-book
+          %span UI Elements
+        %ul.sub
+          %li
+            %a{:href => "general.html"} General
+          %li
+            %a{:href => "buttons.html"} Buttons
+          %li
+            %a{:href => "modal.html"} Modal
+          %li
+            %a{:href => "toastr.html"} Toastr Notifications
+          %li
+            %a{:href => "widget.html"} Widget
+          %li
+            %a{:href => "slider.html"} Slider
+          %li
+            %a{:href => "nestable.html"} Nestable
+          %li
+            %a{:href => "font_awesome.html"} Font Awesome
+      %li.sub-menu
+        %a{:href => "javascript:;"}
+          %i.fa.fa-cogs
+          %span Components
+        %ul.sub
+          %li
+            %a{:href => "grids.html"} Grids
+          %li
+            %a{:href => "calendar.html"} Calendar
+          %li
+            %a{:href => "gallery.html"} Gallery
+          %li
+            %a{:href => "todo_list.html"} Todo List
+          %li
+            %a{:href => "draggable_portlet.html"} Draggable Portlet
+          %li
+            %a{:href => "tree.html"} Tree View
+      %li.sub-menu
+        %a{:href => "javascript:;"}
+          %i.fa.fa-tasks
+          %span Form Stuff
+        %ul.sub
+          %li
+            %a{:href => "form_component.html"} Form Components
+          %li
+            %a{:href => "advanced_form_components.html"} Advanced Components
+          %li
+            %a{:href => "form_wizard.html"} Form Wizard
+          %li
+            %a{:href => "form_validation.html"} Form Validation
+          %li
+            %a{:href => "dropzone.html"} Dropzone File Upload
+          %li
+            %a{:href => "inline_editor.html"} Inline Editor
+          %li
+            %a{:href => "image_cropping.html"} Image Cropping
+          %li
+            %a{:href => "file_upload.html"} Multiple File Upload
+      %li.sub-menu
+        %a{:href => "javascript:;"}
+          %i.fa.fa-th
+          %span Data Tables
+        %ul.sub
+          %li
+            %a{:href => "basic_table.html"} Basic Table
+          %li
+            %a{:href => "responsive_table.html"} Responsive Table
+          %li
+            %a{:href => "dynamic_table.html"} Dynamic Table
+          %li
+            %a{:href => "editable_table.html"} Editable Table
+      %li.sub-menu
+        %a{:href => "javascript:;"}
+          %i.fa.fa-envelope
+          %span Mail
+        %ul.sub
+          %li
+            %a{:href => "inbox.html"} Inbox
+          %li
+            %a{:href => "inbox_details.html"} Inbox Details
+      %li.sub-menu
+        %a{:href => "javascript:;"}
+          %i.fa.fa-bar-chart-o
+          %span Charts
+        %ul.sub
+          %li
+            %a{:href => "morris.html"} Morris
+          %li
+            %a{:href => "chartjs.html"} Chartjs
+          %li
+            %a{:href => "flot_chart.html"} Flot Charts
+          %li
+            %a{:href => "xchart.html"} xChart
+      %li.sub-menu
+        %a{:href => "javascript:;"}
+          %i.fa.fa-shopping-cart
+          %span Shop
+        %ul.sub
+          %li
+            %a{:href => "product_list.html"} List View
+          %li
+            %a{:href => "product_details.html"} Details View
+      %li
+        %a{:href => "google_maps.html"}
+          %i.fa.fa-map-marker
+          %span Google Maps
+      %li.sub-menu
+        %a{:href => "javascript:;"}
+          %i.fa.fa-comments-o
+          %span Chat Room
+        %ul.sub
+          %li
+            %a{:href => "lobby.html"} Lobby
+          %li
+            %a{:href => "chat_room.html"} Chat Room
+      %li.sub-menu
+        %a{:href => "javascript:;"}
+          %i.fa.fa-glass
+          %span Extra
+        %ul.sub
+          %li
+            %a{:href => "blank.html"} Blank Page
+          %li
+            %a{:href => "sidebar_closed.html"} Sidebar Closed
+          %li
+            %a{:href => "people_directory.html"} People Directory
+          %li
+            %a{:href => "coming_soon.html"} Coming Soon
+          %li
+            %a{:href => "lock_screen.html"} Lock Screen
+          %li
+            %a{:href => "profile.html"} Profile
+          %li
+            %a{:href => "invoice.html"} Invoice
+          %li
+            %a{:href => "project_list.html"} Project List
+          %li
+            %a{:href => "project_details.html"} Project Details
+          %li
+            %a{:href => "search_result.html"} Search Result
+          %li
+            %a{:href => "pricing_table.html"} Pricing Table
+          %li
+            %a{:href => "faq.html"} FAQ
+          %li
+            %a{:href => "fb_wall.html"} FB Wall
+          %li
+            %a{:href => "404.html"} 404 Error
+          %li
+            %a{:href => "500.html"} 500 Error
+      %li
+        %a{:href => "login.html"}
+          %i.fa.fa-user
+          %span Login Page
+      / multi level menu start
+      %li.sub-menu
+        %a{:href => "javascript:;"}
+          %i.fa.fa-sitemap
+          %span Multi level Menu
+        %ul.sub
+          %li
+            %a{:href => "javascript:;"} Menu Item 1
+          %li.sub-menu
+            %a{:href => "boxed_page.html"} Menu Item 2
+            %ul.sub
+              %li
+                %a{:href => "javascript:;"} Menu Item 2.1
+              %li.sub-menu
+                %a{:href => "javascript:;"} Menu Item 3
+                %ul.sub
+                  %li
+                    %a{:href => "javascript:;"} Menu Item 3.1
+                  %li
+                    %a{:href => "javascript:;"} Menu Item 3.2
+      / multi level menu end
+    / sidebar menu end
+/ sidebar end
