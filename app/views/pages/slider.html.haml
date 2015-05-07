@@ -1,0 +1,89 @@
+= content_for :page_title, "Sliders - ActiStaff"
+
+= content_for :page_specific_styles do
+  / page specific styles go here
+  = stylesheet_link_tag "jquery-ui/jquery-ui-1.10.1.custom.min"
+  
+= content_for :page_specific_scripts do
+  /page specific javascript goes here
+  = javascript_include_tag "jquery-ui/jquery-ui-1.10.1.custom.min",
+                           "dashboard/jquery.ui.touch-punch.min", "dashboard/sliders"
+
+%section.wrapper
+  / page start
+  .row
+    .col-lg-12
+      %section.panel
+        %header.panel-heading
+          jQuery UI Sliders
+        .panel-body
+          %table.table.sliders
+            %tbody
+              %tr
+                %td{:style => "width:14%"} Default
+                %td
+                  #default-slider.slider
+              %tr
+                %td Snap to Increments
+                %td
+                  #snap-inc-slider.slider
+                  .slider-info
+                    Amount ($50 increments):
+                    %span#snap-inc-slider-amount
+              %tr
+                %td Range
+                %td
+                  #slider-range.slider
+                  .slider-info
+                    Price range:
+                    %span#slider-range-amount
+              %tr
+                %td Maximum
+                %td
+                  #slider-range-max.slider
+                  .slider-info
+                    Maximum Value:
+                    %span#slider-range-max-amount
+              %tr
+                %td Minimum
+                %td
+                  #slider-range-min.slider
+                  .slider-info
+                    Minimum Value:
+                    %span#slider-range-min-amount.slider-info
+              %tr
+                %td Graphic EQ
+                %td
+                  #eq
+                    %span 88
+                    %span 77
+                    %span 55
+                    %span 33
+                    %span 40
+                    %span 45
+                    %span 70
+              %tr
+                %td Bound to Select
+                %td
+                  %select#minbeds.form-control.bound-s{:name => "minbeds"}
+                    %option 1
+                    %option 2
+                    %option 3
+                    %option 4
+                    %option 5
+                    %option 6
+              %tr
+                %td Vertical
+                %td
+                  .slider-vertical-value
+                    Value:
+                    %span#slider-vertical-amount.slider-info
+                  #slider-vertical.slider.bg-green{:style => "height: 250px;"}
+              %tr
+                %td Range(Vertical)
+                %td
+                  .slider-vertical-value
+                    Target(Millions):
+                    %span#slider-range-vertical-amount.slider-info
+                  #slider-range-vertical.slider.bg-grey{:style => "height: 250px;"}
+  / page end

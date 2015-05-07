@@ -30,21 +30,21 @@
           %span UI Elements
         %ul.sub
           %li
-            %a{:href => "general.html"} General
+            = link_to "General", dashboard_path("general")
           %li
-            %a{:href => "buttons.html"} Buttons
+            = link_to "Buttons", dashboard_path("buttons")
           %li
-            %a{:href => "modal.html"} Modal
+            = link_to "Modal", dashboard_path("modal")
           %li
-            %a{:href => "toastr.html"} Toastr Notifications
+            = link_to "Toastr Notifications", dashboard_path("toastr")
           %li
-            %a{:href => "widget.html"} Widget
+            = link_to "Widget", dashboard_path("widget")
           %li
-            %a{:href => "slider.html"} Slider
+            = link_to "Slider", dashboard_path("slider")
           %li
-            %a{:href => "nestable.html"} Nestable
+            = link_to "Nestable", dashboard_path("nestable")
           %li
-            %a{:href => "font_awesome.html"} Font Awesome
+            = link_to "Font Awesom", dashboard_path("font_awesome")
       %li.sub-menu
         %a{:href => "javascript:;"}
           %i.fa.fa-cogs

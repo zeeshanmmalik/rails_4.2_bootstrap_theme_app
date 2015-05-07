@@ -1,0 +1,363 @@
+= content_for :page_title, "Widgets - ActiStaff"
+
+= content_for :page_specific_scripts do
+  /page specific javascript goes here
+  = javascript_include_tag "jquery-knob/js/jquery.knob"
+
+  :javascript
+    $(function () {
+      //knob
+      $(".knob").knob();
+    })
+
+%section.wrapper
+  / page start
+  .row
+    .col-lg-4
+      / widget start
+      %aside.profile-nav.alt.green-border
+        %section.panel
+          .user-heading.alt.green-bg
+            %a{:href => "#"}
+              = image_tag "dashboard/profile-avatar.jpg"
+            %h1 Jonathan Smith
+            %p jsmith@flatlab.com
+          %ul.nav.nav-pills.nav-stacked
+            %li
+              %a{:href => "javascript:;"}
+                %i.fa.fa-clock-o
+                Mail Inbox
+                %span.label.label-primary.pull-right.r-activity 19
+            %li
+              %a{:href => "javascript:;"}
+                %i.fa.fa-calendar
+                Recent Activity
+                %span.label.label-info.pull-right.r-activity 11
+            %li
+              %a{:href => "javascript:;"}
+                %i.fa.fa-bell-o
+                Notification
+                %span.label.label-warning.pull-right.r-activity 03
+            %li
+              %a{:href => "javascript:;"}
+                %i.fa.fa-envelope-o
+                Message
+                %span.label.label-success.pull-right.r-activity 10
+      / widget end
+      / widget start
+      .panel
+        .panel-body
+          .bio-chart
+            %input.knob{"data-bgcolor" => "#e8e8e8", "data-displayprevious" => "true", "data-fgcolor" => "#4CC5CD", "data-height" => "101", "data-thickness" => ".2", "data-width" => "101", :value => "63"}/
+          .bio-desk
+            %h4.terques ThemeForest CMS
+            %p Started : 15 July
+            %p Deadline : 15 August
+      / widget end
+    .col-lg-8
+      .row
+        .col-lg-6
+          / widget start
+          %section.panel
+            .twt-feed.blue-bg
+              %h1 Jonathan Smith
+              %p jsmith@flatlab.com
+              %a{:href => "#"}
+                = image_tag "dashboard/profile-avatar.jpg"
+            .weather-category.twt-category
+              %ul
+                %li.active
+                  %h5 320
+                  Tweet
+                %li
+                  %h5 1245
+                  Following
+                %li
+                  %h5 24657
+                  Followers
+            .twt-write.col-sm-12
+              %textarea.form-control.t-text-area{:placeholder => "Tweet Here", :rows => "2"}
+            %footer.twt-footer
+              %button.btn.btn-space.btn-white{"data-toggle" => "button"}
+                %i.fa.fa-map-marker
+              %button.btn.btn-space.btn-white{"data-toggle" => "button"}
+                %i.fa.fa-camera
+              %button.btn.btn-space.btn-info.pull-right{:type => "button"}
+                %i.fa.fa-twitter
+                Tweet
+          / widget end
+        .col-lg-6
+          / widget start
+          %section.panel
+            %header.panel-heading.tab-bg-dark-navy-blue
+              %ul.nav.nav-tabs.nav-justified
+                %li.active
+                  %a{"data-toggle" => "tab", :href => "#popular"}
+                    Popular
+                %li
+                  %a{"data-toggle" => "tab", :href => "#comments"}
+                    Comments
+                %li
+                  %a{"data-toggle" => "tab", :href => "#recent"}
+                    Recents
+            .panel-body
+              .tab-content.tasi-tab
+                #popular.tab-pane.active
+                  %article.media
+                    %a.pull-left.thumb.p-thumb
+                      = image_tag "dashboard/product1.jpg"
+                    .media-body
+                      %a.p-head{:href => "#"} Item One Tittle
+                      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  %article.media
+                    %a.pull-left.thumb.p-thumb
+                      = image_tag "dashboard/product2.png"
+                    .media-body
+                      %a.p-head{:href => "#"} Item Two Tittle
+                      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  %article.media
+                    %a.pull-left.thumb.p-thumb
+                      = image_tag "dashboard/product3.png"
+                    .media-body
+                      %a.p-head{:href => "#"} Item Three Tittle
+                      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                #comments.tab-pane
+                  %article.media
+                    %a.pull-left.thumb.p-thumb
+                      = image_tag "dashboard/avatar-mini.jpg"
+                    .media-body
+                      %a.cmt-head{:href => "#"} Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      %p
+                        %i.fa.fa-clock-o
+                        1 hours ago
+                  %article.media
+                    %a.pull-left.thumb.p-thumb
+                      = image_tag "dashboard/avatar-mini2.jpg"
+                    .media-body
+                      %a.cmt-head{:href => "#"} Nulla vel metus scelerisque ante sollicitudin commodo
+                      %p
+                        %i.fa.fa-clock-o
+                        23 mins ago
+                  %article.media
+                    %a.pull-left.thumb.p-thumb
+                      = image_tag "dashboard/avatar-mini3.jpg"
+                    .media-body
+                      %a.cmt-head{:href => "#"} Donec lacinia congue felis in faucibus.
+                      %p
+                        %i.fa.fa-clock-o
+                        15 mins ago
+                #recent.tab-pane
+                  Recent Item goes here
+          / widget end
+          / widget start
+          .state-overview
+            %section.panel
+              .symbol.red
+                %i.fa.fa-tags
+              .value
+                %h1 140
+                %p Sales
+          / widget end
+      .row
+        .col-lg-12
+          %section.panel
+            .panel-body
+              %ul.summary-list
+                %li
+                  %a{:href => "javascript:;"}
+                    %i.fa.fa-shopping-cart.text-primary
+                    1 Purchase
+                %li
+                  %a{:href => "javascript:;"}
+                    %i.fa.fa-envelope.text-info
+                    15 Emails
+                %li
+                  %a{:href => "javascript:;"}
+                    %i.fa.fa-picture-o.text-muted
+                    2 Photo Upload
+                %li
+                  %a{:href => "javascript:;"}
+                    %i.fa.fa-tags.text-success
+                    19 Sales
+                %li
+                  %a{:href => "javascript:;"}
+                    %i.fa.fa-microphone.text-danger
+                    4 Audio
+  .row
+    .col-lg-6
+      %section.panel
+        %header.panel-heading
+          Timeline
+          %span.tools.pull-right
+            %a.fa.fa-chevron-down{:href => "javascript:;"}
+            %a.fa.fa-times{:href => "javascript:;"}
+        .panel-body.profile-activity
+          %h5.pull-right 12 August 2013
+          .activity.terques
+            %span
+              %i.fa.fa-shopping-cart
+            .activity-desk
+              .panel
+                .panel-body
+                  .arrow
+                  %i.fa.fa-clock-o
+                  %h4 10:45 AM
+                  %p Purchased new equipments for zonal office setup and stationaries.
+          .activity.alt.purple
+            %span
+              %i.fa.fa-rocket
+            .activity-desk
+              .panel
+                .panel-body
+                  .arrow-alt
+                  %i.fa.fa-clock-o
+                  %h4 12:30 AM
+                  %p Lorem ipsum dolor sit amet consiquest dio
+          .activity.blue
+            %span
+              %i.fa.fa-bullhorn
+            .activity-desk
+              .panel
+                .panel-body
+                  .arrow
+                  %i.fa.fa-clock-o
+                  %h4 10:45 AM
+                  %p Please note which location you will consider, or both. Reporting to the VP  you will be responsible for managing..
+          .activity.alt.green
+            %span
+              %i.fa.fa-beer
+            .activity-desk
+              .panel
+                .panel-body
+                  .arrow-alt
+                  %i.fa.fa-clock-o
+                  %h4 12:30 AM
+                  %p Please note which location you will consider, or both.
+    .col-lg-6
+      %section.panel
+        %header.panel-heading
+          Chats
+          %span.tools.pull-right
+            %a.fa.fa-chevron-down{:href => "javascript:;"}
+            %a.fa.fa-times{:href => "javascript:;"}
+        .panel-body
+          .timeline-messages
+            / Comment
+            .msg-time-chat
+              %a.message-img{:href => "#"}
+                = image_tag "dashboard/chat-avatar.jpg", class: "avatar"
+              .message-body.msg-in
+                %span.arrow
+                .text
+                  %p.attribution
+                    %a{:href => "#"} Jhon Doe
+                    at 1:55pm, 13th April 2013
+                  %p Hello, How are you brother?
+            / /comment
+            / Comment
+            .msg-time-chat
+              %a.message-img{:href => "#"}
+                = image_tag "dashboard/chat-avatar2.jpg", class: "avatar"
+              .message-body.msg-out
+                %span.arrow
+                .text
+                  %p.attribution
+                    %a{:href => "#"} Jonathan Smith
+                    at 2:01pm, 13th April 2013
+                  %p I'm Fine, Thank you. What about you? How is going on?
+            / /comment
+            / Comment
+            .msg-time-chat
+              %a.message-img{:href => "#"}
+                = image_tag "dashboard/chat-avatar.jpg", class: "avatar"
+              .message-body.msg-in
+                %span.arrow
+                .text
+                  %p.attribution
+                    %a{:href => "#"} Jhon Doe
+                    at 2:03pm, 13th April 2013
+                  %p Yeah I'm fine too. Everything is going fine here.
+            / /comment
+            / Comment
+            .msg-time-chat
+              %a.message-img{:href => "#"}
+                = image_tag "dashboard/chat-avatar2.jpg", class: "avatar"
+              .message-body.msg-out
+                %span.arrow
+                .text
+                  %p.attribution
+                    %a{:href => "#"} Jonathan Smith
+                    at 2:05pm, 13th April 2013
+                  %p well good to know that. anyway how much time you need to done your task?
+            / /comment
+            / Comment
+            .msg-time-chat
+              %a.message-img{:href => "#"}
+                = image_tag "dashboard/chat-avatar.jpg", class: "avatar"
+              .message-body.msg-in
+                %span.arrow
+                .text
+                  %p.attribution
+                    %a{:href => "#"} Jhon Doe
+                    at 1:55pm, 13th April 2013
+                  %p Hello, How are you brother?
+            / /comment
+          .chat-form
+            .input-cont
+              %input.form-control.col-lg-12{:placeholder => "Type a message here...", :type => "text"}/
+            .form-group
+              .pull-right.chat-features
+                %a{:href => "javascript:;"}
+                  %i.fa.fa-camera
+                %a{:href => "javascript:;"}
+                  %i.fa.fa-link
+                %a.btn.btn-danger{:href => "javascript:;"} Send
+  .row
+    .col-lg-4
+      %section.panel
+        %header.panel-heading
+          Basic items
+        %ul.list-group
+          %li.list-group-item Cras justo odio
+          %li.list-group-item Dapibus ac facilisis in
+          %li.list-group-item Morbi leo risus
+          %li.list-group-item Porta ac consectetur ac
+          %li.list-group-item Vestibulum at eros
+          %li.list-group-item Vestibulum at eros
+    .col-lg-4
+      %section.panel
+        %header.panel-heading
+          Linked items
+        .list-group
+          %a.list-group-item{:href => "#"}
+            Cras justo odio
+          %a.list-group-item.active{:href => "javascript:;"} Dapibus ac facilisis in
+          %a.list-group-item{:href => "javascript:;"} Morbi leo risus
+          %a.list-group-item{:href => "javascript:;"} Porta ac consectetur ac
+          %a.list-group-item{:href => "javascript:;"} Vestibulum at eros
+          %a.list-group-item{:href => "javascript:;"} Vestibulum at eros
+    .col-lg-4
+      %section.panel
+        %header.panel-heading
+          Custom content
+        .list-group
+          %a.list-group-item{:href => "javascript:;"}
+            %h4.list-group-item-heading List group item heading
+            %p.list-group-item-text Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+          %a.list-group-item.active{:href => "javascript:;"}
+            %h4.list-group-item-heading List group item heading
+            %p.list-group-item-text Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+          %a.list-group-item{:href => "javascript:;"}
+            %h4.list-group-item-heading List group item heading
+            %p.list-group-item-text Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+  .row
+    .col-lg-4
+      %section.panel
+        %header.panel-heading
+          Collapsible Widget
+          %span.tools.pull-right
+            %a.fa.fa-chevron-down{:href => "javascript:;"}
+            %a.fa.fa-times{:href => "javascript:;"}
+        .panel-body
+          Content goes here
+  / page end

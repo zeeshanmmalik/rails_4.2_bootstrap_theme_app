@@ -1,0 +1,445 @@
+= content_for :page_title, "General - ActiStaff"
+
+= content_for :page_specific_styles do
+  / page specific styles go here
+  = stylesheet_link_tag "gritter/css/jquery.gritter"
+  
+= content_for :page_specific_scripts do
+  /page specific javascript goes here
+  = javascript_include_tag "gritter/js/jquery.gritter",
+                           "dashboard/jquery.pulsate.min",
+                           "dashboard/gritter",
+                           "dashboard/pulsate"
+
+%section.wrapper
+  .row
+    .col-lg-12
+      / breadcrumbs start
+      %ul.breadcrumb
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-home
+            Home
+        %li
+          %a{:href => "#"} Library
+        %li.active Data
+      / breadcrumbs end
+  .row
+    .col-lg-6
+      / notification start
+      %section.panel
+        .panel-body
+          .alert.alert-success.alert-block.fade.in
+            %button.close.close-sm{"data-dismiss" => "alert", :type => "button"}
+              %i.fa.fa-times
+            %h4
+              %i.fa.fa-ok-sign
+              Success!
+            %p Best check yo self, you're not looking too good...
+          .alert.alert-block.alert-danger.fade.in
+            %button.close.close-sm{"data-dismiss" => "alert", :type => "button"}
+              %i.fa.fa-times
+            %strong Oh snap!
+            Change a few things up and try submitting again.
+          .alert.alert-success.fade.in
+            %button.close.close-sm{"data-dismiss" => "alert", :type => "button"}
+              %i.fa.fa-times
+            %strong Well done!
+            You successfully read this important alert message.
+          .alert.alert-info.fade.in
+            %button.close.close-sm{"data-dismiss" => "alert", :type => "button"}
+              %i.fa.fa-times
+            %strong Heads up!
+            This alert needs your attention, but it's not super important.
+          .alert.alert-warning.fade.in
+            %button.close.close-sm{"data-dismiss" => "alert", :type => "button"}
+              %i.fa.fa-times
+            %strong Warning!
+            Best check yo self, you're not looking too good.
+      / notification end
+      / tab nav start
+      %section.panel
+        %header.panel-heading.tab-bg-dark-navy-blue
+          %ul.nav.nav-tabs
+            %li.active
+              %a{"data-toggle" => "tab", :href => "#home"} Home
+            %li
+              %a{"data-toggle" => "tab", :href => "#about"} About
+            %li
+              %a{"data-toggle" => "tab", :href => "#profile"} Profile
+            %li
+              %a{"data-toggle" => "tab", :href => "#contact"} Contact
+        .panel-body
+          .tab-content
+            #home.tab-pane.active
+              Home
+            #about.tab-pane About
+            #profile.tab-pane Profile
+            #contact.tab-pane Contact
+      / tab nav start
+      / tab nav start
+      %section.panel
+        %header.panel-heading.tab-bg-dark-navy-blue
+          %ul.nav.nav-tabs
+            %li
+              %a{"data-toggle" => "tab", :href => "#home-2"}
+                %i.fa.fa-home
+            %li.active
+              %a{"data-toggle" => "tab", :href => "#about-2"}
+                %i.fa.fa-user
+                About
+            %li
+              %a{"data-toggle" => "tab", :href => "#contact-2"}
+                %i.fa.fa-envelope-o
+                Contact
+        .panel-body
+          .tab-content
+            #home-2.tab-pane
+              Home
+            #about-2.tab-pane.active About
+            #contact-2.tab-pane Contact
+      / tab nav start
+      / tab nav start
+      %section.panel
+        %header.panel-heading.tab-bg-dark-navy-blue.tab-right
+          %ul.nav.nav-tabs.pull-right
+            %li.active
+              %a{"data-toggle" => "tab", :href => "#home-3"}
+                %i.fa.fa-home
+            %li
+              %a{"data-toggle" => "tab", :href => "#about-3"}
+                %i.fa.fa-user
+                About
+            %li
+              %a{"data-toggle" => "tab", :href => "#contact-3"}
+                %i.fa.fa-envelope-o
+                Contact
+          %span.hidden-sm.wht-color Right tab
+        .panel-body
+          .tab-content
+            #home-3.tab-pane.active
+              Home
+            #about-3.tab-pane About
+            #contact-3.tab-pane Contact
+      / tab nav start
+      / navigation start
+      %nav.navbar.navbar-inverse{:role => "navigation"}
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.fa.fa-bars
+          %a.navbar-brand{:href => "#"} Brand
+        / Collect the nav links, forms, and other content for toggling
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{:href => "#"} Link
+            %li
+              %a{:href => "javascript:;"} Link
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:;"}
+                Dropdown
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} Action
+                %li
+                  %a{:href => "#"} Another action
+                %li
+                  %a{:href => "#"} Something else here
+                %li
+                  %a{:href => "#"} Separated link
+                %li
+                  %a{:href => "#"} One more separated link
+          / <form class="navbar-form navbar-left" role="search">
+          / <div class="form-group">
+          / <input type="text" class="form-control" placeholder="Search">
+          / </div>
+          / <button type="submit" class="btn btn-default">Submit</button>
+          / </form>
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{:href => "javascript:;"} Link
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "javascript:;"}
+                Dropdown
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} Action
+                %li
+                  %a{:href => "#"} Another action
+                %li
+                  %a{:href => "#"} Something else here
+                %li
+                  %a{:href => "#"} Separated link
+        / /.navbar-collapse
+      / navigation end
+      / tooltips start
+      %section.panel
+        .panel-body
+          %button.btn.btn-default.tooltips{"data-original-title" => "Tooltip on top", "data-placement" => "top", "data-toggle" => "tooltip", :title => "", :type => "button"} Tooltip on top
+          %button.btn.btn-default.tooltips{"data-original-title" => "Tooltip on left", "data-placement" => "left", "data-toggle" => "tooltip", :title => "", :type => "button"} left
+          %button.btn.btn-default.tooltips{"data-placement" => "bottom", "data-toggle" => "tooltip ", :title => "Tooltip on bottom", :type => "button"} bottom
+          %button.btn.btn-default.tooltips{"data-placement" => "right", "data-toggle" => "tooltip", :title => "Tooltip on right", :type => "button"} right
+      / tooltips start
+      / popover start
+      %section.panel
+        .panel-body
+          %button.btn.btn-info.popovers{"data-content" => "And here's some amazing content. It's very engaging. right?", "data-original-title" => "Popovers in top", "data-placement" => "top", "data-trigger" => "hover"} Popover on Top
+          %button.btn.btn-info.popovers{"data-content" => "Vivamus sagittis lacus vel augue laoreet rutrum faucibus.", "data-original-title" => "Popovers in bottom", "data-placement" => "bottom", "data-trigger" => "hover"} Bottom
+          %button.btn.btn-info.popovers{"data-content" => "Vivamus sagittis lacus vel augue laoreet rutrum faucibus.", "data-original-title" => "Popovers in right", "data-placement" => "right", "data-trigger" => "hover"} Right
+          %button.btn.btn-info.popovers{"data-content" => "Vivamus sagittis lacus vel augue laoreet rutrum faucibus.", "data-original-title" => "Popovers in left", "data-placement" => "left", "data-trigger" => "hover"} Left
+      / popover start
+      / modal start
+      %section.panel
+        %header.panel-heading
+          Modal Dialogs
+        .panel-body
+          %a.btn.btn-success{"data-toggle" => "modal", :href => "#myModal"}
+            Dialog
+          %a.btn.btn-warning{"data-toggle" => "modal", :href => "#myModal2"}
+            Confirm
+          %a.btn.btn-danger{"data-toggle" => "modal", :href => "#myModal3"}
+            Alert !
+          / Modal
+          #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                  %h4.modal-title Modal Tittle
+                .modal-body
+                  Body goes here...
+                .modal-footer
+                  %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                  %button.btn.btn-success{:type => "button"} Save changes
+          / modal
+          / Modal
+          #myModal2.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                  %h4.modal-title Modal Tittle
+                .modal-body
+                  Body goes here...
+                .modal-footer
+                  %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                  %button.btn.btn-warning{:type => "button"} Confirm
+          / modal
+          / Modal
+          #myModal3.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                  %h4.modal-title Modal Tittle
+                .modal-body
+                  Body goes here...
+                .modal-footer
+                  %button.btn.btn-danger{:type => "button"} Ok
+          / modal
+      / modal start
+      / carousel start
+      %section.panel
+        #c-slide.carousel.slide.auto.panel-body
+          %ol.carousel-indicators.out
+            %li.active{"data-slide-to" => "0", "data-target" => "#c-slide"}
+            %li{"data-slide-to" => "1", "data-target" => "#c-slide"}
+            %li{"data-slide-to" => "2", "data-target" => "#c-slide"}
+          .carousel-inner
+            .item.text-center.active
+              %h3 Flatlab is new model of Admin
+              %small.text-muted Based on Bootstrap 3
+            .item.text-center
+              %h3 Massive UI Elements
+              %small.text-muted Fully Responsive
+            .item.text-center
+              %h3 Well Documentation
+              %small.text-muted Easy to Use
+          %a.left.carousel-control{"data-slide" => "prev", :href => "#c-slide"}
+            %i.fa.fa-angle-left
+          %a.right.carousel-control{"data-slide" => "next", :href => "#c-slide"}
+            %i.fa.fa-angle-right
+      / carousel end
+      / gritter notification start
+      %section.panel
+        %header.panel-heading
+          Gritter Notifications
+        .panel-body
+          %p.text-muted Click on below buttons to check it out.
+          %a#add-regular.btn.btn-default.btn-sm{:href => "javascript:;"} Regular
+          %a#add-sticky.btn.btn-success.btn-sm{:href => "javascript:;"} Sticky
+          %a#add-without-image.btn.btn-info.btn-sm{:href => "javascript:;"} Imageless
+          %a#add-gritter-light.btn.btn-warning.btn-sm{:href => "javascript:;"} Light
+          %a#add-max.btn.btn-primary.btn-sm{:href => "javascript:;"} Max of 3
+          %a#remove-all.btn.btn-danger.btn-sm{:href => "#"} Remove all
+      / gritter notification end
+    .col-lg-6
+      / progress bar start
+      %section.panel
+        %header.panel-heading
+          Basic Progress Bars
+        .panel-body
+          .progress.progress-xs
+            .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "60", :role => "progressbar", :style => "width: 60%;"}
+              %span.sr-only 60% Complete
+          .progress.progress-xs
+            .progress-bar.progress-bar-success{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "40", :role => "progressbar", :style => "width: 40%"}
+              %span.sr-only 40% Complete (success)
+          .progress.progress-xs
+            .progress-bar.progress-bar-info{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "20", :role => "progressbar", :style => "width: 20%"}
+              %span.sr-only 20% Complete
+          .progress.progress-xs
+            .progress-bar.progress-bar-warning{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "60", :role => "progressbar", :style => "width: 60%"}
+              %span.sr-only 60% Complete (warning)
+          .progress.progress-xs
+            .progress-bar.progress-bar-danger{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "80", :role => "progressbar", :style => "width: 80%"}
+              %span.sr-only 80% Complete
+          %p.text-muted
+            Stacked Progress Bars
+          .progress.progress-sm
+            .progress-bar.progress-bar-success{:style => "width: 35%"}
+              %span.sr-only 35% Complete (success)
+            .progress-bar.progress-bar-warning{:style => "width: 20%"}
+              %span.sr-only 20% Complete (warning)
+            .progress-bar.progress-bar-danger{:style => "width: 10%"}
+              %span.sr-only 10% Complete (danger)
+      %section.panel
+        %header.panel-heading
+          Striped Progress Bars
+        .panel-body
+          .progress.progress-striped.progress-sm
+            .progress-bar.progress-bar-success{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "40", :role => "progressbar", :style => "width: 40%"}
+              %span.sr-only 40% Complete (success)
+          .progress.progress-striped.progress-sm
+            .progress-bar.progress-bar-info{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "20", :role => "progressbar", :style => "width: 20%"}
+              %span.sr-only 20% Complete
+          .progress.progress-striped.progress-sm
+            .progress-bar.progress-bar-warning{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "60", :role => "progressbar", :style => "width: 60%"}
+              %span.sr-only 60% Complete (warning)
+          .progress.progress-striped.progress-sm
+            .progress-bar.progress-bar-danger{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "80", :role => "progressbar", :style => "width: 80%"}
+              %span.sr-only 80% Complete (danger)
+          %p.text-muted
+            Animated Progress Bars
+          .progress.progress-striped.active.progress-sm
+            .progress-bar.progress-bar-success{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "45", :role => "progressbar", :style => "width: 45%"}
+              %span.sr-only 45% Complete
+      / progress bar end
+      / collapse start
+      #accordion.panel-group.m-bot20
+        .panel.panel-default
+          .panel-heading
+            %h4.panel-title
+              %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseOne"}
+                Collapsible Group Item #1
+          #collapseOne.panel-collapse.collapse.in
+            .panel-body
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        .panel.panel-default
+          .panel-heading
+            %h4.panel-title
+              %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseTwo"}
+                Collapsible Group Item #2
+          #collapseTwo.panel-collapse.collapse
+            .panel-body
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        .panel.panel-default
+          .panel-heading
+            %h4.panel-title
+              %a.accordion-toggle{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseThree"}
+                Collapsible Group Item #3
+          #collapseThree.panel-collapse.collapse
+            .panel-body
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      / collapse end
+      / label and badge start
+      %section.panel
+        .panel-body
+          %p.text-muted.text-center Labels
+          %p.text-center
+            %span.label.label-default label
+            %span.label.label-primary Primary
+            %span.label.label-success Success
+            %span.label.label-info Info
+            %span.label.label-inverse Inverse
+            %span.label.label-warning Warning
+            %span.label.label-danger Danger
+          %p.text-muted.text-center Badges
+          %p.m-bot-none.text-center
+            %span.badge 5
+            %span.badge.bg-primary 10
+            %span.badge.bg-success 15
+            %span.badge.bg-info 20
+            %span.badge.bg-inverse 25
+            %span.badge.bg-warning 30
+            %span.badge.bg-important 35
+      / label and badge end
+      / pagination start
+      %section.panel
+        .panel-body
+          %div
+            %ul.pagination.pagination-lg
+              %li
+                %a{:href => "#"} «
+              %li
+                %a{:href => "#"} 1
+              %li
+                %a{:href => "#"} 2
+              %li
+                %a{:href => "#"} 3
+              %li
+                %a{:href => "#"} 4
+              %li
+                %a{:href => "#"} 5
+              %li
+                %a{:href => "#"} »
+          .text-center
+            %ul.pagination
+              %li
+                %a{:href => "#"} «
+              %li
+                %a{:href => "#"} 1
+              %li
+                %a{:href => "#"} 2
+              %li
+                %a{:href => "#"} 3
+              %li
+                %a{:href => "#"} 4
+              %li
+                %a{:href => "#"} 5
+              %li
+                %a{:href => "#"} »
+          %div
+            %ul.pagination.pagination-sm.pull-right
+              %li
+                %a{:href => "#"} «
+              %li
+                %a{:href => "#"} 1
+              %li
+                %a{:href => "#"} 2
+              %li
+                %a{:href => "#"} 3
+              %li
+                %a{:href => "#"} 4
+              %li
+                %a{:href => "#"} 5
+              %li
+                %a{:href => "#"} »
+      / pagination end
+  .row
+    .col-lg-12
+      / Pulstate start
+      %section.panel
+        %header.panel-heading
+          Pulstate
+        .panel-body
+          %p Click on below buttons to check it out.
+          %a#pulsate-regular.btn.btn-default{:href => "javascript:;"} Pulsate regular
+          %a#pulsate-once.btn.btn-success{:href => "javascript:;"} Pulsate once
+          %a#pulsate-hover.btn.btn-info{:href => "javascript:;"} Pulsate hover
+          %a#pulsate-crazy.btn.btn-danger{:href => "javascript:;"} Crazy pulsate :)
+      / Pulstate  end

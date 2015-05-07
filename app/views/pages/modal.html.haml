@@ -1,0 +1,324 @@
+= content_for :page_title, "Modal - ActiStaff"
+
+= content_for :page_specific_styles do
+  / page specific styles go here
+  = stylesheet_link_tag "gritter/css/jquery.gritter"
+  
+= content_for :page_specific_scripts do
+  /page specific javascript goes here
+  = javascript_include_tag "gritter/js/jquery.gritter",
+                           "dashboard/jquery.pulsate.min",
+                           "dashboard/gritter",
+                           "dashboard/pulsate"
+
+
+%section.wrapper.site-min-height
+  .row
+    .col-lg-12
+      / breadcrumbs start
+      %ul.breadcrumb
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-home
+            Home
+        %li
+          %a{:href => "#"} UI Elements
+        %li.active Modal
+      / breadcrumbs end
+  .row
+    .col-lg-6
+      / modal start
+      %section.panel
+        %header.panel-heading
+          Default Modal Dialogs
+        .panel-body
+          %a.btn.btn-success{"data-toggle" => "modal", :href => "#myModal"}
+            Default
+          %a.btn.btn-warning{"data-toggle" => "modal", :href => "#myModal2"}
+            Large
+          %a.btn.btn-danger{"data-toggle" => "modal", :href => "#myModal3"}
+            Small
+          / Modal
+          #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                  %h4.modal-title Default Modal Tittle
+                .modal-body
+                  Body goes here...
+                .modal-footer
+                  %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                  %button.btn.btn-success{:type => "button"} Save changes
+          / modal
+          / Modal
+          #myModal2.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog.modal-lg
+              .modal-content
+                .modal-header
+                  %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                  %h4.modal-title Modal Tittle
+                .modal-body
+                  Body goes here...
+                .modal-footer
+                  %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                  %button.btn.btn-warning{:type => "button"} Confirm
+          / modal
+          / Modal
+          #myModal3.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog.modal-sm
+              .modal-content
+                .modal-header
+                  %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                  %h4.modal-title Modal Tittle
+                .modal-body
+                  Body goes here...
+                .modal-footer
+                  %button.btn.btn-danger{:type => "button"} Ok
+          / modal
+      / modal start
+      / modal start
+      %section.panel
+        %header.panel-heading
+          Vertically Center Align Modal Dialogs
+        .panel-body
+          %a.btn.btn-success{"data-toggle" => "modal", :href => "#myModal4"}
+            Default
+          %a.btn.btn-warning{"data-toggle" => "modal", :href => "#myModal5"}
+            Large
+          %a.btn.btn-danger{"data-toggle" => "modal", :href => "#myModal6"}
+            Small
+          / vertical center Modal start
+          #myModal4.modal.fade.modal-dialog-center{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog
+              .modal-content-wrap
+                .modal-content
+                  .modal-header
+                    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                    %h4.modal-title Modal Tittle
+                  .modal-body
+                    Body goes here...
+                  .modal-footer
+                    %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                    %button.btn.btn-warning{:type => "button"} Confirm
+          / vertical center Modal end
+          / vertical center large Modal  start
+          #myModal5.modal.fade.modal-dialog-center{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog.modal-lg
+              .modal-content-wrap
+                .modal-content
+                  .modal-header
+                    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                    %h4.modal-title Modal Tittle
+                  .modal-body
+                    Body goes here...
+                  .modal-footer
+                    %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                    %button.btn.btn-warning{:type => "button"} Confirm
+          / vertical center large Modal end
+          / vertical center small Modal start
+          #myModal6.modal.fade.modal-dialog-center{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog.modal-sm
+              .modal-content-wrap
+                .modal-content
+                  .modal-header
+                    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                    %h4.modal-title Modal Tittle
+                  .modal-body
+                    Body goes here...
+                  .modal-footer
+                    %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                    %button.btn.btn-warning{:type => "button"} Confirm
+          / vertical center small Modal end
+      / modal start
+      / modal start
+      %section.panel
+        %header.panel-heading
+          Top with space Modal Dialogs
+        .panel-body
+          %a.btn.btn-default{"data-toggle" => "modal", :href => "#myModal9"}
+            Top
+          / vertical center top side Modal start
+          #myModal9.modal.fade.modal-dialog-center.top-modal-with-space{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog
+              %div
+                .modal-content
+                  .modal-header
+                    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                    %h4.modal-title Modal Tittle
+                  .modal-body
+                    Body goes here...
+                  .modal-footer
+                    %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                    %button.btn.btn-warning{:type => "button"} Confirm
+          / vertical center top side Modal end
+      / modal start
+      / modal start
+      %section.panel
+        %header.panel-heading
+          Top Without Space Modal Dialogs
+        .panel-body
+          %a.btn.btn-success{"data-toggle" => "modal", :href => "#myModal10"}
+            Default Top
+          %a.btn.btn-warning{"data-toggle" => "modal", :href => "#myModal11"}
+            Large Top
+          %a.btn.btn-danger{"data-toggle" => "modal", :href => "#myModal12"}
+            Small Top
+          / vertical center Modal start
+          #myModal10.modal.fade.top-modal-without-space{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog
+              .modal-content-wrap
+                .modal-content
+                  .modal-header
+                    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                    %h4.modal-title Modal Tittle
+                  .modal-body
+                    Body goes here...
+                  .modal-footer
+                    %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                    %button.btn.btn-warning{:type => "button"} Confirm
+          / vertical center Modal end
+          / vertical center large Modal  start
+          #myModal11.modal.fade.top-modal-without-space{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog.modal-lg
+              .modal-content-wrap
+                .modal-content
+                  .modal-header
+                    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                    %h4.modal-title Modal Tittle
+                  .modal-body
+                    Body goes here...
+                  .modal-footer
+                    %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                    %button.btn.btn-warning{:type => "button"} Confirm
+          / vertical center large Modal end
+          / vertical center small Modal start
+          #myModal12.modal.fade.top-modal-without-space{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog.modal-sm
+              .modal-content-wrap
+                .modal-content
+                  .modal-header
+                    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                    %h4.modal-title Modal Tittle
+                  .modal-body
+                    Body goes here...
+                  .modal-footer
+                    %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                    %button.btn.btn-warning{:type => "button"} Confirm
+          / vertical center small Modal end
+      / modal start
+    .col-lg-6
+      / modal start
+      %section.panel
+        %header.panel-heading
+          With Space Modal Dialogs
+        .panel-body
+          %a.btn.btn-info{"data-toggle" => "modal", :href => "#myModal7"}
+            Left
+          %a.btn.btn-primary{"data-toggle" => "modal", :href => "#myModal8"}
+            Right
+          / vertical center left side Modal start
+          #myModal7.modal.fade.modal-dialog-center.left-modal-with-space{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog
+              .modal-content-wrap
+                .modal-content
+                  .modal-header
+                    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                    %h4.modal-title Modal Tittle
+                  .modal-body
+                    Body goes here...
+                  .modal-footer
+                    %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                    %button.btn.btn-warning{:type => "button"} Confirm
+          / vertical center left side Modal end
+          / vertical center right side Modal start
+          #myModal8.modal.fade.modal-dialog-center.right-modal-with-space{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog
+              .modal-content-wrap
+                .modal-content
+                  .modal-header
+                    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                    %h4.modal-title Modal Tittle
+                  .modal-body
+                    Body goes here...
+                  .modal-footer
+                    %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                    %button.btn.btn-warning{:type => "button"} Confirm
+          / vertical center right side Modal end
+      / modal start
+      / modal start
+      %section.panel
+        %header.panel-heading
+          Without Space Modal Dialogs
+        .panel-body
+          %a.btn.btn-info{"data-toggle" => "modal", :href => "#myModal13"}
+            Left
+          %a.btn.btn-primary{"data-toggle" => "modal", :href => "#myModal14"}
+            Right
+          / vertical center left side Modal start
+          #myModal13.modal.fade.modal-dialog-center.left-modal-without-space{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog
+              .modal-content-wrap
+                .modal-content
+                  .modal-header
+                    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                    %h4.modal-title Modal Tittle
+                  .modal-body
+                    Body goes here...
+                  .modal-footer
+                    %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                    %button.btn.btn-warning{:type => "button"} Confirm
+          / vertical center left side Modal end
+          / vertical center right side Modal start
+          #myModal14.modal.fade.modal-dialog-center.right-modal-without-space{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog
+              .modal-content-wrap
+                .modal-content
+                  .modal-header
+                    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                    %h4.modal-title Modal Tittle
+                  .modal-body
+                    Body goes here...
+                  .modal-footer
+                    %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                    %button.btn.btn-warning{:type => "button"} Confirm
+          / vertical center right side Modal end
+      / modal start
+      / modal start
+      %section.panel
+        %header.panel-heading
+          full Height Modal Dialogs
+        .panel-body
+          %a.btn.btn-warning{"data-toggle" => "modal", :href => "#myModal16"}
+            Left
+          %a.btn.btn-danger{"data-toggle" => "modal", :href => "#myModal17"}
+            Right
+          / Modal
+          #myModal16.modal.fade.full-width-modal-left{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog.modal-sm
+              .modal-content-wrap
+                .modal-content
+                  .modal-header
+                    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                    %h4.modal-title Modal Tittle
+                  .modal-body
+                    Body goes here...
+                  .modal-footer
+                    %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                    %button.btn.btn-warning{:type => "button"} Confirm
+          / modal
+          / Modal
+          #myModal17.modal.fade.full-width-modal-right{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+            .modal-dialog.modal-sm
+              .modal-content-wrap
+                .modal-content
+                  .modal-header
+                    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+                    %h4.modal-title Modal Tittle
+                  .modal-body
+                    Body goes here...
+                  .modal-footer
+                    %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                    %button.btn.btn-warning{:type => "button"} Confirm
+          / modal
+      / modal start

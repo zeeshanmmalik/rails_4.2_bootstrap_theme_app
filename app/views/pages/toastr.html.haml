@@ -1,0 +1,267 @@
+= content_for :page_title, "Modal - ActiStaff"
+
+= content_for :page_specific_styles do
+  / page specific styles go here
+  = stylesheet_link_tag "toastr-master/toastr"
+  
+= content_for :page_specific_scripts do
+  /page specific javascript goes here
+  = javascript_include_tag "toastr-master/toastr"
+
+  :javascript
+    $(function () {
+          var i = -1;
+          var toastCount = 0;
+          var $toastlast;
+
+          var getMessage = function () {
+              var msgs = ['Hi, this is toastr notification',
+                  '<div><input class="input-small" value="textbox"/>&nbsp;<a href="http://thevectorlab.net/flatlab/" target="_blank">This is a hyperlink</a></div><div><button type="button" id="okBtn" class="btn btn-primary">Close me</button><button type="button" id="surpriseBtn" class="btn" style="margin: 0 8px 0 8px">Surprise me</button></div>',
+                  'Flatlab is awesome',
+                  'Build with BS3!',
+                  'Easy to use',
+                  'Have fun storming the castle!'
+              ];
+              i++;
+              if (i === msgs.length) {
+                  i = 0;
+              }
+
+              return msgs[i];
+          };
+          $('#showtoast').click(function () {
+              var shortCutFunction = $("#toastTypeGroup input:radio:checked").val();
+              var msg = $('#message').val();
+              var title = $('#title').val() || '';
+              var $showDuration = $('#showDuration');
+              var $hideDuration = $('#hideDuration');
+              var $timeOut = $('#timeOut');
+              var $extendedTimeOut = $('#extendedTimeOut');
+              var $showEasing = $('#showEasing');
+              var $hideEasing = $('#hideEasing');
+              var $showMethod = $('#showMethod');
+              var $hideMethod = $('#hideMethod');
+              var toastIndex = toastCount++;
+
+              toastr.options = {
+                  closeButton: $('#closeButton').prop('checked'),
+                  debug: $('#debugInfo').prop('checked'),
+                  progressBar: $('#progressBar').prop('checked'),
+                  positionClass: $('#positionGroup input:radio:checked').val() || 'toast-top-right',
+                  preventDuplicates: $('#preventDuplicates').prop('checked'),
+                  onclick: null
+              };
+
+              if ($('#addBehaviorOnToastClick').prop('checked')) {
+                  toastr.options.onclick = function () {
+                      alert('You can perform some custom action after a toast goes away');
+                  };
+              }
+
+              if ($showDuration.val().length) {
+                  toastr.options.showDuration = $showDuration.val();
+              }
+
+              if ($hideDuration.val().length) {
+                  toastr.options.hideDuration = $hideDuration.val();
+              }
+
+              if ($timeOut.val().length) {
+                  toastr.options.timeOut = $timeOut.val();
+              }
+
+              if ($extendedTimeOut.val().length) {
+                  toastr.options.extendedTimeOut = $extendedTimeOut.val();
+              }
+
+              if ($showEasing.val().length) {
+                  toastr.options.showEasing = $showEasing.val();
+              }
+
+              if ($hideEasing.val().length) {
+                  toastr.options.hideEasing = $hideEasing.val();
+              }
+
+              if ($showMethod.val().length) {
+                  toastr.options.showMethod = $showMethod.val();
+              }
+
+              if ($hideMethod.val().length) {
+                  toastr.options.hideMethod = $hideMethod.val();
+              }
+
+
+
+              if (!msg) {
+                  msg = getMessage();
+              }
+
+              $("#toastrOptions").text("Command: toastr["
+                      + shortCutFunction
+                      + "](\""
+                      + msg
+                      + (title ? "\", \"" + title : '')
+                      + "\")\n\ntoastr.options = "
+                      + JSON.stringify(toastr.options, null, 2)
+              );
+
+              var $toast = toastr[shortCutFunction](msg, title); // Wire up an event handler to a button in the toast, if it exists
+              $toastlast = $toast;
+              if ($toast.find('#okBtn').length) {
+                  $toast.delegate('#okBtn', 'click', function () {
+                      alert('you clicked me. i was toast #' + toastIndex + '. goodbye!');
+                      $toast.remove();
+                  });
+              }
+              if ($toast.find('#surpriseBtn').length) {
+                  $toast.delegate('#surpriseBtn', 'click', function () {
+                      alert('Surprise! you clicked me. i was toast #' + toastIndex + '. You could perform an action here.');
+                  });
+              }
+          });
+          function getLastToast(){
+              return $toastlast;
+          }
+          $('#clearlasttoast').click(function () {
+              toastr.clear(getLastToast());
+          });
+          $('#cleartoasts').click(function () {
+              toastr.clear();
+          });
+      })
+
+
+%section.wrapper.site-min-height
+  / page start
+  .panel
+    %header.panel-heading
+      Toastr
+    .panel-body
+      .row.toastr-row
+        .col-md-4
+          .form-group
+            %label.control-label{:for => "title"} Title
+            %input#title.form-control{:placeholder => "Enter a title ... ", :type => "text", :value => "Toastr Notification"}/
+          .form-group
+            %label.control-label{:for => "message"} Message
+            %textarea#message.form-control{:placeholder => "Enter a message ...", :rows => "3"} Flatlab is an Awesome dashboard build with BS3
+          .form-group
+            .checkbox-list
+              %label{:for => "closeButton"}
+                #uniform-closeButton.checker
+                  %span.checked
+                    %input#closeButton.input-small{:checked => "checked", :type => "checkbox", :value => "checked"}/
+                Close Button
+              %label{:for => "addBehaviorOnToastClick"}
+                #uniform-addBehaviorOnToastClick.checker
+                  %span
+                    %input#addBehaviorOnToastClick.input-small{:type => "checkbox", :value => "checked"}/
+                Add behavior on toast click
+              %label{:for => "debugInfo"}
+                #uniform-debugInfo.checker
+                  %span
+                    %input#debugInfo.input-small{:type => "checkbox", :value => "checked"}/
+                Debug
+              %label{:for => "progressBar"}
+                #progress-info.checker
+                  %span
+                    %input#progressBar.input-mini{:type => "checkbox", :value => "checked"}/
+                Progress Bar
+        .col-md-2
+          #toastTypeGroup.form-group
+            %label Toast Type
+            .radio-list
+              %label
+                .radio>
+                  %span.checked
+                    %input{:checked => "checked", :name => "toasts", :type => "radio", :value => "success"}/
+                Success
+              %label
+                .radio>
+                  %span
+                    %input{:name => "toasts", :type => "radio", :value => "info"}/
+                Info
+              %label
+                .radio>
+                  %span
+                    %input{:name => "toasts", :type => "radio", :value => "warning"}/
+                Warning
+              %label
+                .radio>
+                  %span
+                    %input{:name => "toasts", :type => "radio", :value => "error"}/
+                Error
+          #positionGroup.form-group
+            %label Position
+            .radio-list
+              %label
+                .radio>
+                  %span.checked
+                    %input{:checked => "checked", :name => "positions", :type => "radio", :value => "toast-top-right"}/
+                Top Right
+              %label
+                .radio>
+                  %span
+                    %input{:name => "positions", :type => "radio", :value => "toast-bottom-right"}/
+                Bottom Right
+              %label
+                .radio>
+                  %span
+                    %input{:name => "positions", :type => "radio", :value => "toast-bottom-left"}/
+                Bottom Left
+              %label
+                .radio>
+                  %span
+                    %input{:name => "positions", :type => "radio", :value => "toast-top-left"}/
+                Top Left
+              %label
+                .radio>
+                  %span
+                    %input{:name => "positions", :type => "radio", :value => "toast-top-center"}/
+                Top Center
+              %label
+                .radio>
+                  %span
+                    %input{:name => "positions", :type => "radio", :value => "toast-bottom-center"}/
+                Bottom Center
+              %label
+                .radio>
+                  %span
+                    %input{:name => "positions", :type => "radio", :value => "toast-top-full-width"}/
+                Top Full Width
+              %label
+                .radio>
+                  %span
+                    %input{:name => "positions", :type => "radio", :value => "toast-bottom-full-width"}/
+                Bottom Full Width
+        .col-md-3
+          .form-group
+            .controls.toastr-pad
+              %label.control-label{:for => "showEasing"} Show Easing
+              %input#showEasing.form-control.input-small{:placeholder => "swing, linear", :type => "text", :value => "swing"}/
+              %label.control-label{:for => "hideEasing"} Hide Easing
+              %input#hideEasing.form-control.input-small{:placeholder => "swing, linear", :type => "text", :value => "linear"}/
+              %label.control-label{:for => "showMethod"} Show Method
+              %input#showMethod.form-control.input-small{:placeholder => "show, fadeIn, slideDown", :type => "text", :value => "fadeIn"}/
+              %label.control-label{:for => "hideMethod"} Hide Method
+              %input#hideMethod.form-control.input-small{:placeholder => "hide, fadeOut, slideUp", :type => "text", :value => "fadeOut"}/
+        .col-md-3
+          .form-group
+            .controls.toastr-pad
+              %label.control-label{:for => "showDuration"} Show Duration
+              %input#showDuration.form-control.input-small{:placeholder => "ms", :type => "text", :value => "300"}/
+              %label.control-label{:for => "hideDuration"} Hide Duration
+              %input#hideDuration.form-control.input-small{:placeholder => "ms", :type => "text", :value => "1000"}/
+              %label.control-label{:for => "timeOut"} Time out
+              %input#timeOut.form-control.input-small{:placeholder => "ms", :type => "text", :value => "5000"}/
+              %label.control-label{:for => "timeOut"} Extended time out
+              %input#extendedTimeOut.form-control.input-small{:placeholder => "ms", :type => "text", :value => "1000"}/
+      .row
+        .col-md-12
+          %button#showtoast.btn.btn-success{:type => "button"} Show Toast
+          %button#cleartoasts.btn.btn-danger{:type => "button"} Clear Toasts
+          %button#clearlasttoast.btn.btn-danger{:type => "button"} Clear Last Toast
+      .row.mtop20
+        .col-md-12
+          %pre#toastrOptions Settings...
+  / page end

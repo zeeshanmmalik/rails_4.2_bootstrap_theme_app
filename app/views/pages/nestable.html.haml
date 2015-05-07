@@ -1,0 +1,120 @@
+= content_for :page_title, "nestable - ActiStaff"
+
+= content_for :page_specific_styles do
+  / page specific styles go here
+  = stylesheet_link_tag "nestable/jquery.nestable"
+  
+= content_for :page_specific_scripts do
+  /page specific javascript goes here
+  = javascript_include_tag "nestable/jquery.nestable",
+                           "dashboard/nestable"
+
+%section.wrapper
+  / page start
+  .row
+    .col-lg-12
+      #nestable_list_menu.text-center
+        %button.btn.btn-success{"data-action" => "expand-all", :type => "button"} Expand All
+        %button.btn.btn-warning{"data-action" => "collapse-all", :type => "button"} Collapse All
+  .row
+    .col-lg-12
+      .border-head
+        %h3 Serialised Output (per list)
+      .row
+        .col-lg-6
+          %textarea#nestable_list_1_output.col-lg-12.form-control
+        .col-lg-6
+          %textarea#nestable_list_2_output.col-lg-12.form-control
+  %br/
+  .row
+    .col-lg-6
+      %section.panel
+        %header.panel-heading
+          Nestable List 1
+          %span.tools.pull-right
+            %a.fa.fa-chevron-down{:href => "javascript:;"}
+            %a.fa.fa-times{:href => "javascript:;"}
+        .panel-body
+          #nestable_list_1.dd
+            %ol.dd-list
+              %li.dd-item{"data-id" => "1"}
+                .dd-handle Item 1
+              %li.dd-item{"data-id" => "2"}
+                .dd-handle Item 2
+                %ol.dd-list
+                  %li.dd-item{"data-id" => "3"}
+                    .dd-handle Item 3
+                  %li.dd-item{"data-id" => "4"}
+                    .dd-handle Item 4
+                  %li.dd-item{"data-id" => "5"}
+                    .dd-handle Item 5
+                    %ol.dd-list
+                      %li.dd-item{"data-id" => "6"}
+                        .dd-handle Item 6
+                      %li.dd-item{"data-id" => "7"}
+                        .dd-handle Item 7
+                      %li.dd-item{"data-id" => "8"}
+                        .dd-handle Item 8
+                  %li.dd-item{"data-id" => "9"}
+                    .dd-handle Item 9
+                  %li.dd-item{"data-id" => "10"}
+                    .dd-handle Item 10
+              %li.dd-item{"data-id" => "11"}
+                .dd-handle Item 11
+              %li.dd-item{"data-id" => "12"}
+                .dd-handle Item 12
+    .col-lg-6
+      %section.panel
+        %header.panel-heading
+          Nestable List 2
+          %span.tools.pull-right
+            %a.fa.fa-chevron-down{:href => "javascript:;"}
+            %a.fa.fa-times{:href => "javascript:;"}
+        .panel-body
+          #nestable_list_2.dd
+            %ol.dd-list
+              %li.dd-item{"data-id" => "13"}
+                .dd-handle Item 13
+              %li.dd-item{"data-id" => "14"}
+                .dd-handle Item 14
+              %li.dd-item{"data-id" => "15"}
+                .dd-handle Item 15
+                %ol.dd-list
+                  %li.dd-item{"data-id" => "16"}
+                    .dd-handle Item 16
+                  %li.dd-item{"data-id" => "17"}
+                    .dd-handle Item 17
+                  %li.dd-item{"data-id" => "18"}
+                    .dd-handle Item 18
+  .row
+    .col-lg-12
+      %section.panel
+        %header.panel-heading
+          Nestable List 3
+          %span.tools.pull-right
+            %a.fa.fa-chevron-down{:href => "javascript:;"}
+            %a.fa.fa-times{:href => "javascript:;"}
+        .panel-body
+          #nestable_list_3.dd
+            %ol.dd-list
+              %li.dd-item.dd3-item{"data-id" => "13"}
+                .dd-handle.dd3-handle
+                .dd3-content Item 13
+              %li.dd-item.dd3-item{"data-id" => "14"}
+                .dd-handle.dd3-handle
+                .dd3-content Item 14
+              %li.dd-item.dd3-item{"data-id" => "15"}
+                .dd-handle.dd3-handle
+                .dd3-content Item 15
+                %ol.dd-list
+                  %li.dd-item.dd3-item{"data-id" => "16"}
+                    .dd-handle.dd3-handle
+                    .dd3-content Item 16
+                  %li.dd-item.dd3-item{"data-id" => "17"}
+                    .dd-handle.dd3-handle
+                    .dd3-content Item 17
+                  %li.dd-item.dd3-item{"data-id" => "18"}
+                    .dd-handle.dd3-handle
+                    .dd3-content Item 18
+  / page end
+
