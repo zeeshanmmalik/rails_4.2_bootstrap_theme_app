@@ -1,0 +1,222 @@
+= content_for :page_title, "Mega Menu - ActiStaff"
+
+= content_for :page_specific_styles do
+  / page specific styles go here
+  = stylesheet_link_tag "dashboard/yamm"
+
+= content_for :page_specific_scripts do
+  :javascript
+    $(document).on('click', '.yamm .dropdown-menu', function(e) {
+        e.stopPropagation()
+    })
+
+    
+%body.mega-nav
+  %section#container
+    / header start
+    %header.header.white-bg
+      .navbar-header
+        %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+          %span.fa.fa-bars
+        / logo start
+        %a.logo{:href => "#{dashboard_path('dashboard_home')}"}
+          Acti
+          %span staff
+        / logo end
+        .container
+          #navbar-collapse-1.navbar-collapse.collapse.yamm.mega-menu
+            %ul.nav.navbar-nav
+              / Classic list
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Mega Menu
+                  %b.fa.fa-angle-down
+                %ul.dropdown-menu.wide-full
+                  %li
+                    / Content container to add padding
+                    .yamm-content
+                      .row
+                        %ul.col-sm-2.list-unstyled
+                          %li
+                            %p.title Standard
+                          %li
+                            %a{:href => "#"} Normal Navigation
+                          %li
+                            %a{:href => "#"} Execellent menu
+                          %li
+                            %a{:href => "#"} Customizable
+                          %li
+                            %a{:href => "#"} Huge Components
+                          %li
+                            %a{:href => "#"} Bootstrap v3.2
+                          %li
+                            %a{:href => "#"} Fontawesome
+                        %ul.col-sm-2.list-unstyled
+                          %li
+                            %p.title Description
+                          %li
+                            %a{:href => "#"}
+                              %span.d-title Title Goes Here
+                              %span.d-desk Description goes here
+                          %li
+                            %a{:href => "#"}
+                              %span.d-title Amaging Dashboard
+                              %span.d-desk Build with BS3
+                          %li
+                            %a{:href => "#"}
+                              %span.d-title 2000 Satisfied Client
+                              %span.d-desk Max 5 star rating
+                          %li
+                            %a{:href => "#"}
+                              %span.d-title Easy to Cutomize
+                              %span.d-desk Very easy to use
+                        %ul.col-sm-2.list-unstyled
+                          %li
+                            %p.title Iconic
+                          %li
+                            %a{:href => "#"}
+                              %i.fa.fa-arrow-circle-right.text-muted
+                              Right Angle
+                          %li
+                            %a{:href => "#"}
+                              %i.fa.fa-desktop.text-muted
+                              Desktop Icon
+                          %li
+                            %a{:href => "#"}
+                              %i.fa.fa-laptop.text-muted
+                              Laptop Icon
+                          %li
+                            %a{:href => "#"}
+                              %i.fa.fa-mobile.text-muted
+                              Mobile Icon
+                          %li
+                            %a{:href => "#"}
+                              %i.fa.fa-lock.text-muted
+                              Lock Icon
+                        %ul.col-sm-3.list-unstyled
+                          %li
+                            %p.title Image + Description
+                          %li
+                            %a{:href => "#"}
+                              = image_tag "dashboard/mega_icon1.png", class: "icon-img"
+                              %span.icon-desk
+                                %span.d-title Title Goes Here
+                                %span.d-desk Description goes here
+                          %li
+                            %a{:href => "#"}
+                              = image_tag "dashboard/mega_icon2.png", class: "icon-img"
+                              %span.icon-desk
+                                %span.d-title Amaging Dashboard
+                                %span.d-desk Build with BS3
+                          %li
+                            %a{:href => "#"}
+                              = image_tag "dashboard/mega_icon3.png", class: "icon-img"
+                              %span.icon-desk
+                                %span.d-title 2000 Satisfied Client
+                                %span.d-desk Max 5 star rating
+                          %li
+                            %a{:href => "#"}
+                              = image_tag "dashboard/mega_icon4.png", class: "icon-img"
+                              %span.icon-desk
+                                %span.d-title Easy to Cutomize
+                                %span.d-desk Very easy to use
+                        %ul.col-sm-3.list-unstyled.custom-nav-img
+                          %li
+                            %p.title Custom
+                          %li
+                            %p.desk
+                              Consectetur ullamcorper purus a rutrum. Etiam dui nisi, hendrerit feugiat serisque et, cursus eu magna.
+                          .mega-bg
+              / Accordion demo
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Accordion Menu
+                  %b.fa.fa-angle-down
+                %ul.dropdown-menu
+                  %li
+                    .yamm-content
+                      .row
+                        #accordion.panel-group
+                          .panel.panel-default
+                            .panel-heading
+                              %h4.panel-title
+                                %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseOne"} Collapsible Group Item #1
+                            #collapseOne.panel-collapse.collapse.in
+                              .panel-body Ut consectetur ullamcorper purus a rutrum. Etiam dui nisi, hendrerit feugiat scelerisque et, cursus eu magna.
+                          .panel.panel-default
+                            .panel-heading
+                              %h4.panel-title
+                                %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseTwo"} Collapsible Group Item #2
+                            #collapseTwo.panel-collapse.collapse
+                              .panel-body Nullam pretium fermentum sapien ut convallis. Suspendisse vehicula, magna non tristique tincidunt, massa nisi luctus tellus, vel laoreet sem lectus ut nibh.
+                          .panel.panel-default
+                            .panel-heading
+                              %h4.panel-title
+                                %a{"data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseThree"} Collapsible Group Item #3
+                            #collapseThree.panel-collapse.collapse
+                              .panel-body Praesent leo quam, faucibus at facilisis id, rhoncus sit amet metus. Sed vitae ipsum non nibh mattis congue eget id augue.
+              / Classic dropdown
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Classic Menu
+                  %b.fa.fa-angle-down
+                %ul.dropdown-menu{:role => "menu"}
+                  %li
+                    %a{:href => "#", :tabindex => "-1"} Action
+                  %li
+                    %a{:href => "#", :tabindex => "-1"} Another action
+                  %li
+                    %a{:href => "#", :tabindex => "-1"} Something else here
+                  %li.divider
+                  %li
+                    %a{:href => "#", :tabindex => "-1"} Separated link
+              / Pictures
+              %li.dropdown.yamm-fw
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Images Menu
+                  %b.fa.fa-angle-down
+                %ul.dropdown-menu
+                  %li
+                    .yamm-content
+                      .row
+                        .col-xs-6.col-sm-2
+                          %a.m-thumb{:href => "#"}
+                            = image_tag "dashboard/mega-menu/mega-menu-images1.jpg"
+                            Anim pariatur
+                        .col-xs-6.col-sm-2
+                          %a.m-thumb{:href => "#"}
+                            = image_tag "dashboard/mega-menu/mega-menu-images2.jpg"
+                            Reprehenderit
+                        .col-xs-6.col-sm-2
+                          %a.m-thumb{:href => "#"}
+                            = image_tag "dashboard/mega-menu/mega-menu-images3.jpg"
+                            Keffiyeh helvetica
+                        .col-xs-6.col-sm-2
+                          %a.m-thumb{:href => "#"}
+                            = image_tag "dashboard/mega-menu/mega-menu-images4.jpg"
+                            Pariatur cliche
+                        .col-xs-6.col-sm-2
+                          %a.m-thumb{:href => "#"}
+                            = image_tag "dashboard/mega-menu/mega-menu-images5.jpg"
+                            Food truck quinoa
+                        .col-xs-6.col-sm-2
+                          %a.m-thumb{:href => "#"}
+                            = image_tag "dashboard/mega-menu/mega-menu-images6.jpg"
+                            Leggings occaecat craft
+    / header end
+    / sidebar start
+    / sidebar end
+    / main content start
+    %section#main-content
+      %section.wrapper
+        / page start
+        Body content goes here
+        / page end
+    / main content end
+    / footer start
+    %footer.site-footer.always-bottom
+      .text-center
+        2013 © FlatLab by VectorLab.
+        %a.go-top{:href => "#"}
+          %i.fa.fa-angle-up
+    / footer end

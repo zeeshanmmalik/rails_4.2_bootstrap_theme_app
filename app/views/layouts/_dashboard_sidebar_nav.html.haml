@@ -17,13 +17,13 @@
           %li
             = link_to "Horizontal Menu", dashboard_path("horizontal_menu")
           %li
-            %a{:href => "header-color.html"} Different Color Top bar
+            = link_to "Different Color Top bar", dashboard_path("header-color")
           %li
-            %a{:href => "mega_menu.html"} Mega Menu
+            = link_to "Mega Menu", dashboard_path("mega_menu")
           %li
-            %a{:href => "language_switch_bar.html"} Language Switch Bar
+            = link_to "Language Switch Bar", dashboard_path("language_switch_bar")
           %li
-            %a{:href => "email_template.html", :target => "_blank"} Email Template
+            = link_to "Email Template", dashboard_path("email_template"), target: "_blank"
       %li.sub-menu
         %a{:href => "javascript:;"}
           %i.fa.fa-book

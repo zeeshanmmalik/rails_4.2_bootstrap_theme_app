@@ -27,6 +27,8 @@
     = yield
   - elsif params[:id] == 'horizontal_menu'
     = yield
+  - elsif params[:id] == 'mega_menu'
+    = yield
   - else 
     %body
       %section#container
