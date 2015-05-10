@@ -1,0 +1,38 @@
+= content_for :page_title, "Callendar - ActiStaff"
+
+= content_for :page_specific_styles do
+  / page specific styles go here
+  = stylesheet_link_tag "fullcalendar/fullcalendar/bootstrap-fullcalendar"
+  
+= content_for :page_specific_scripts do
+  /page specific javascript goes here
+  = javascript_include_tag "common/jquery-ui-1.9.2.custom.min",
+                           "fullcalendar/fullcalendar/fullcalendar.min",
+                           "dashboard/external-dragging-calendar"
+                           
+                           
+
+%section.wrapper
+  / page start
+  .row
+    %aside.col-lg-3
+      %h4.drg-event-title Draggable Events
+      #external-events
+        .external-event.label.label-primary My Event 1
+        .external-event.label.label-success My Event 2
+        .external-event.label.label-info My Event 3
+        .external-event.label.label-inverse My Event 4
+        .external-event.label.label-warning My Event 5
+        .external-event.label.label-danger My Event 6
+        .external-event.label.label-default My Event 7
+        .external-event.label.label-primary My Event 8
+        .external-event.label.label-info My Event 9
+        .external-event.label.label-success My Event 10
+        %p.border-top.drp-rmv
+          %input#drop-remove{:type => "checkbox"}/
+          remove after drop
+    %aside.col-lg-9
+      %section.panel
+        .panel-body
+          #calendar.has-toolbar
+  / page end

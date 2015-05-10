@@ -1,3 +1,4 @@
+$(document).ready(function() {
 var Script = function () {
 
 
@@ -114,3 +115,4 @@ var Script = function () {
 
 
 }();
+});

@@ -4,7 +4,7 @@
     / sidebar menu start
     %ul#nav-accordion.sidebar-menu
       %li
-        %a.active{:href => "#{ dashboard_path('dashboard_home') }"}
+        %a.active{:href => "#{ dashboard_path('dashboard_home') }"} 
           %i.fa.fa-dashboard
           %span Dashboard
       %li.sub-menu
@@ -51,84 +51,84 @@
           %span Components
         %ul.sub
           %li
-            %a{:href => "grids.html"} Grids
+            = link_to "Grids", dashboard_path("grids")
           %li
-            %a{:href => "calendar.html"} Calendar
+            = link_to "Calendar", dashboard_path("calendar")
           %li
-            %a{:href => "gallery.html"} Gallery
+            = link_to "Gallery", dashboard_path("gallery")
           %li
-            %a{:href => "todo_list.html"} Todo List
+            = link_to "Todo List", dashboard_path("todo_list")
           %li
-            %a{:href => "draggable_portlet.html"} Draggable Portlet
+            = link_to "Draggable Portlet", dashboard_path("draggable_portlet")
           %li
-            %a{:href => "tree.html"} Tree View
+            = link_to "Tree View", dashboard_path("tree")
       %li.sub-menu
         %a{:href => "javascript:;"}
           %i.fa.fa-tasks
           %span Form Stuff
         %ul.sub
           %li
-            %a{:href => "form_component.html"} Form Components
+            = link_to "Form Components", dashboard_path("form_component")
           %li
-            %a{:href => "advanced_form_components.html"} Advanced Components
+            = link_to "Advanced Components", dashboard_path("advanced_form_components")
           %li
-            %a{:href => "form_wizard.html"} Form Wizard
+            = link_to "Form Wizard", dashboard_path("form_wizard")
           %li
-            %a{:href => "form_validation.html"} Form Validation
+            = link_to "Form Validation", dashboard_path("form_validation")
           %li
-            %a{:href => "dropzone.html"} Dropzone File Upload
+            = link_to "Dropzone File Upload", dashboard_path("dropzone")
           %li
-            %a{:href => "inline_editor.html"} Inline Editor
+            = link_to "Inline Editor", dashboard_path("inline_editor")
           %li
-            %a{:href => "image_cropping.html"} Image Cropping
+            = link_to "Image Cropping", dashboard_path("image_cropping")
           %li
-            %a{:href => "file_upload.html"} Multiple File Upload
+            = link_to "Multiple File Upload", dashboard_path("file_upload")
       %li.sub-menu
         %a{:href => "javascript:;"}
           %i.fa.fa-th
           %span Data Tables
         %ul.sub
           %li
-            %a{:href => "basic_table.html"} Basic Table
+            = link_to "Basic Table", dashboard_path("basic_table")
           %li
-            %a{:href => "responsive_table.html"} Responsive Table
+            = link_to "Responsive Table", dashboard_path("responsive_table")
           %li
-            %a{:href => "dynamic_table.html"} Dynamic Table
+            = link_to "Dynamic Table", dashboard_path("dynamic_table")
           %li
-            %a{:href => "editable_table.html"} Editable Table
+            = link_to "Editable Table", dashboard_path("editable_table")
       %li.sub-menu
         %a{:href => "javascript:;"}
           %i.fa.fa-envelope
           %span Mail
         %ul.sub
           %li
-            %a{:href => "inbox.html"} Inbox
+            = link_to "Inbox", dashboard_path("inbox")
           %li
-            %a{:href => "inbox_details.html"} Inbox Details
+            = link_to "Inbox Details", dashboard_path("inbox_details")
       %li.sub-menu
         %a{:href => "javascript:;"}
           %i.fa.fa-bar-chart-o
           %span Charts
         %ul.sub
           %li
-            %a{:href => "morris.html"} Morris
+            = link_to "Morris", dashboard_path("morris")
           %li
-            %a{:href => "chartjs.html"} Chartjs
+            = link_to "Chartjs", dashboard_path("chartjs")
           %li
-            %a{:href => "flot_chart.html"} Flot Charts
+            = link_to "Flot Charts", dashboard_path("flot_chart")
           %li
-            %a{:href => "xchart.html"} xChart
+            = link_to "xChart", dashboard_path("xchart")
       %li.sub-menu
         %a{:href => "javascript:;"}
           %i.fa.fa-shopping-cart
           %span Shop
         %ul.sub
           %li
-            %a{:href => "product_list.html"} List View
+            %a{:href => "#{ dashboard_path('product_list') }"} List View
           %li
-            %a{:href => "product_details.html"} Details View
+            %a{:href => "#{ dashboard_path('product_details') }"} Details View
       %li
-        %a{:href => "google_maps.html"}
+        %a{:href => "#{ dashboard_path('google_maps') }"}
           %i.fa.fa-map-marker
           %span Google Maps
       %li.sub-menu
@@ -137,46 +137,46 @@
           %span Chat Room
         %ul.sub
           %li
-            %a{:href => "lobby.html"} Lobby
+            %a{:href => "#{ dashboard_path('lobby') }"} Lobby
           %li
-            %a{:href => "chat_room.html"} Chat Room
+            %a{:href => "#{ dashboard_path('chat_room') }"} Chat Room
       %li.sub-menu
         %a{:href => "javascript:;"}
           %i.fa.fa-glass
           %span Extra
         %ul.sub
           %li
-            %a{:href => "blank.html"} Blank Page
+            %a{:href => "#{ dashboard_path('blank') }"} Blank Page
           %li
-            %a{:href => "sidebar_closed.html"} Sidebar Closed
+            %a{:href => "#{ dashboard_path('sidebar_closed') }"} Sidebar Closed
           %li
-            %a{:href => "people_directory.html"} People Directory
+            %a{:href => "#{ dashboard_path('people_directory') }"} People Directory
           %li
-            %a{:href => "coming_soon.html"} Coming Soon
+            %a{:href => "#{ dashboard_path('coming_soon') }"} Coming Soon
           %li
-            %a{:href => "lock_screen.html"} Lock Screen
+            %a{:href => "#{ dashboard_path('lock_screen') }"} Lock Screen
           %li
-            %a{:href => "profile.html"} Profile
+            %a{:href => "#{ dashboard_path('profile') }"} Profile
           %li
-            %a{:href => "invoice.html"} Invoice
+            %a{:href => "#{ dashboard_path('invoice') }"} Invoice
           %li
-            %a{:href => "project_list.html"} Project List
+            %a{:href => "#{ dashboard_path('project_list') }"} Project List
           %li
-            %a{:href => "project_details.html"} Project Details
+            %a{:href => "#{ dashboard_path('project_details') }"} Project Details
           %li
-            %a{:href => "search_result.html"} Search Result
+            %a{:href => "#{ dashboard_path('search_result') }"} Search Result
           %li
-            %a{:href => "pricing_table.html"} Pricing Table
+            %a{:href => "#{ dashboard_path('pricing_table') }"} Pricing Table
           %li
-            %a{:href => "faq.html"} FAQ
+            %a{:href => "#{ dashboard_path('faq') }"} FAQ
           %li
-            %a{:href => "fb_wall.html"} FB Wall
+            %a{:href => "#{ dashboard_path('fb_wall') }"} FB Wall
           %li
-            %a{:href => "404.html"} 404 Error
+            %a{:href => "#{ dashboard_path('404') }"} 404 Error
           %li
-            %a{:href => "500.html"} 500 Error
+            %a{:href => "#{ dashboard_path('500') }"} 500 Error
       %li
-        %a{:href => "login.html"}
+        %a{:href => "#{dashboard_path('login')}"}
           %i.fa.fa-user
           %span Login Page
       / multi level menu start
@@ -188,7 +188,7 @@
           %li
             %a{:href => "javascript:;"} Menu Item 1
           %li.sub-menu
-            %a{:href => "boxed_page.html"} Menu Item 2
+            %a{:href => "#{dashboard_path('boxed_page')}"} Menu Item 2
             %ul.sub
               %li
                 %a{:href => "javascript:;"} Menu Item 2.1

@@ -1,0 +1,109 @@
+= content_for :page_title, "Gallery - ActiStaff"
+
+= content_for :page_specific_styles do
+  / page specific styles go here
+  = stylesheet_link_tag "fancybox/source/jquery.fancybox", "dashboard/gallery"
+  
+= content_for :page_specific_scripts do
+  /page specific javascript goes here
+  = javascript_include_tag "fancybox/source/jquery.fancybox",
+                           "dashboard/modernizr.custom", "dashboard/toucheffects"
+
+  :javascript
+    $(function() {
+      //    fancybox
+      jQuery(".fancybox").fancybox();
+    });
+
+%section.wrapper
+  / page start
+  %section.panel
+    %header.panel-heading
+      Image Galley
+    .panel-body
+      %ul.grid.cs-style-3
+        %li
+          %figure
+            = image_tag "dashboard/gallery/4.jpg"
+            %figcaption
+              %h3 Mindblowing
+              %span lorem ipsume
+              = link_to "Take a look", image_path("dashboard/gallery/4.jpg"), :rel => "group", :class => "fancybox"
+        %li
+          %figure
+            = image_tag "dashboard/gallery/1.jpg"
+            %figcaption
+              %h3 Clean  Fresh
+              %span dolor ament
+              = link_to "Take a look", image_path("dashboard/gallery/1.jpg"), :rel => "group", :class => "fancybox"
+        %li
+          %figure
+            = image_tag "dashboard/gallery/2.jpg"
+            %figcaption
+              %h3 Flat Concept
+              %span tawseef tasi
+              = link_to "Take a look", image_path("dashboard/gallery/2.jpg"), :rel => "group", :class => "fancybox"
+        %li
+          %figure
+            = image_tag "dashboard/gallery/5.jpg"
+            %figcaption
+              %h3 Modern
+              %span dkmosa inc
+              = link_to "Take a look", image_path("dashboard/gallery/5.jpg"), :rel => "group", :class => "fancybox"
+        %li
+          %figure
+            = image_tag "dashboard/gallery/3.jpg"
+            %figcaption
+              %h3 Clean Code
+              %span nice concept
+              = link_to "Take a look", image_path("dashboard/gallery/3.jpg"), :rel => "group", :class => "fancybox"
+        %li
+          %figure
+            = image_tag "dashboard/gallery/6.jpg"
+            %figcaption
+              %h3 Cheers
+              %span sumon ahmed
+              = link_to "Take a look", image_path("dashboard/gallery/6.jpg"), :rel => "group", :class => "fancybox"
+        %li
+          %figure
+            = image_tag "dashboard/gallery/4.jpg"
+            %figcaption
+              %h3 Freshness
+              %span rerum facilis
+              = link_to "Take a look", image_path("dashboard/gallery/4.jpg"), :rel => "group", :class => "fancybox"
+        %li
+          %figure
+            = image_tag "dashboard/gallery/1.jpg"
+            %figcaption
+              %h3 Awesome
+              %span At vero eos
+              = link_to "Take a look", image_path("dashboard/gallery/1.jpg"), :rel => "group", :class => "fancybox"
+        %li
+          %figure
+            = image_tag "dashboard/gallery/2.jpg"
+            %figcaption
+              %h3 Music
+              %span atque corrupti
+              = link_to "Take a look", image_path("dashboard/gallery/2.jpg"), :rel => "group", :class => "fancybox"
+        %li
+          %figure
+            = image_tag "dashboard/gallery/3.jpg"
+            %figcaption
+              %h3 Clean Code
+              %span nice concept
+              = link_to "Take a look", image_path("dashboard/gallery/3.jpg"), :rel => "group", :class => "fancybox"
+        %li
+          %figure
+            = image_tag "dashboard/gallery/6.jpg"
+            %figcaption
+              %h3 Cheers
+              %span sumon ahmed
+              = link_to "Take a look", image_path("dashboard/gallery/6.jpg"), :rel => "group", :class => "fancybox"
+        %li
+          %figure
+            = image_tag "dashboard/gallery/4.jpg"
+            %figcaption
+              %h3 Freshness
+              %span rerum facilis
+              = link_to "Take a look", image_path("dashboard/gallery/4.jpg"), :rel => "group", :class => "fancybox"
+  / page end
