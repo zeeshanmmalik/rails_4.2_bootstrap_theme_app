@@ -1,0 +1,240 @@
+= content_for :todo_list, "Gallery - ActiStaff"
+
+= content_for :page_specific_styles do
+  / page specific styles go here
+  = stylesheet_link_tag "dashboard/jquery-ui-1.10.3-smothness-theme.css", "dashboard/tasks"
+  
+= content_for :page_specific_scripts do
+  /page specific javascript goes here
+  = javascript_include_tag "dashboard/jquery-ui-1.10.3",
+                           "dashboard/tasks"
+
+  :javascript
+    jQuery(document).ready(function() {
+      TaskList.initTaskWidget();
+    });
+
+    $(function() {
+      $( "#sortable" ).sortable();
+      $( "#sortable" ).disableSelection();
+    });
+
+
+
+%section.wrapper
+  / page start
+  .row
+    .col-md-12
+      %section.panel.tasks-widget
+        %header.panel-heading
+          Todo list
+        .panel-body
+          .task-content
+            %ul.task-list
+              %li
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp Flatlab is Modern Dashboard
+                  %span.badge.badge-sm.label-success 2 Days
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs
+                      %i.fa.fa-check
+                    %button.btn.btn-primary.btn-xs
+                      %i.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs
+                      %i.fa.fa-trash-o
+              %li
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp Fully Responsive  Bootstrap 3.0.2 Compatible
+                  %span.badge.badge-sm.label-danger Done
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs
+                      %i.fa.fa-check
+                    %button.btn.btn-primary.btn-xs
+                      %i.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs
+                      %i.fa.fa-trash-o
+              %li
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp Daily Standup Meeting
+                  %span.badge.badge-sm.label-warning Company
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs
+                      %i.fa.fa-check
+                    %button.btn.btn-primary.btn-xs
+                      %i.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs
+                      %i.fa.fa-trash-o
+              %li
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp Write well documentation for this theme
+                  %span.badge.badge-sm.label-primary 3 Days
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs
+                      %i.fa.fa-check
+                    %button.btn.btn-primary.btn-xs
+                      %i.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs
+                      %i.fa.fa-trash-o
+              %li
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp We have a plan to include more features in future update
+                  %span.badge.badge-sm.label-info Tomorrow
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs
+                      %i.fa.fa-check
+                    %button.btn.btn-primary.btn-xs
+                      %i.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs
+                      %i.fa.fa-trash-o
+              %li
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp Don't be hesitate to purchase this Dashbord
+                  %span.badge.badge-sm.label-inverse Now
+                  .pull-right
+                    %button.btn.btn-success.btn-xs
+                      %i.fa.fa-check
+                    %button.btn.btn-primary.btn-xs
+                      %i.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs
+                      %i.fa.fa-trash-o
+              %li
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp Code compile and upload
+                  %span.badge.badge-sm.label-success 2 Days
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs
+                      %i.fa.fa-check
+                    %button.btn.btn-primary.btn-xs
+                      %i.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs
+                      %i.fa.fa-trash-o
+              %li
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp Tell your friends to buy this dashboad
+                  %span.badge.badge-sm.label-danger Now
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs
+                      %i.fa.fa-check
+                    %button.btn.btn-primary.btn-xs
+                      %i.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs
+                      %i.fa.fa-trash-o
+          .add-task-row
+            %a.btn.btn-success.btn-sm.pull-left{:href => "#"} Add New Tasks
+            %a.btn.btn-default.btn-sm.pull-right{:href => "#"} See All Tasks
+  .row
+    .col-md-12
+      %section.panel.tasks-widget
+        %header.panel-heading
+          Sortable Todo list
+        .panel-body
+          .task-content
+            %ul#sortable.task-list
+              %li.list-primary
+                %i.fa.fa-ellipsis-v
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp Flatlab is Modern Dashboard
+                  %span.badge.badge-sm.label-success 2 Days
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs.fa.fa-check
+                    %button.btn.btn-primary.btn-xs.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs.fa.fa-trash-o
+              %li.list-danger
+                %i.fa.fa-ellipsis-v
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp Fully Responsive  Bootstrap 3.0.2 Compatible
+                  %span.badge.badge-sm.label-danger Done
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs.fa.fa-check
+                    %button.btn.btn-primary.btn-xs.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs.fa.fa-trash-o
+              %li.list-success
+                %i.fa.fa-ellipsis-v
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp Daily Standup Meeting
+                  %span.badge.badge-sm.label-warning Company
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs.fa.fa-check
+                    %button.btn.btn-primary.btn-xs.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs.fa.fa-trash-o
+              %li.list-warning
+                %i.fa.fa-ellipsis-v
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp Write well documentation for this theme
+                  %span.badge.badge-sm.label-primary 3 Days
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs.fa.fa-check
+                    %button.btn.btn-primary.btn-xs.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs.fa.fa-trash-o
+              %li.list-info
+                %i.fa.fa-ellipsis-v
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp We have a plan to include more features in future update
+                  %span.badge.badge-sm.label-info Tomorrow
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs.fa.fa-check
+                    %button.btn.btn-primary.btn-xs.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs.fa.fa-trash-o
+              %li.list-inverse
+                %i.fa.fa-ellipsis-v
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp Don't be hesitate to purchase this Dashbord
+                  %span.badge.badge-sm.label-inverse Now
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs.fa.fa-check
+                    %button.btn.btn-primary.btn-xs.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs.fa.fa-trash-o
+              %li.list-primary
+                %i.fa.fa-ellipsis-v
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp Code compile and upload
+                  %span.badge.badge-sm.label-success 2 Days
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs.fa.fa-check
+                    %button.btn.btn-primary.btn-xs.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs.fa.fa-trash-o
+              %li.list-success
+                %i.fa.fa-ellipsis-v
+                .task-checkbox
+                  %input.list-child{:type => "checkbox", :value => ""}/
+                .task-title
+                  %span.task-title-sp Tell your friends to buy this dashboad
+                  %span.badge.badge-sm.label-danger Now
+                  .pull-right.hidden-phone
+                    %button.btn.btn-success.btn-xs.fa.fa-check
+                    %button.btn.btn-primary.btn-xs.fa.fa-pencil
+                    %button.btn.btn-danger.btn-xs.fa.fa-trash-o
+          .add-task-row
+            %a.btn.btn-success.btn-sm.pull-left{:href => "#"} Add New Tasks
+            %a.btn.btn-default.btn-sm.pull-right{:href => "#"} See All Tasks
+  / page end    

@@ -1,0 +1,93 @@
+= content_for :todo_list, "Tree View - ActiStaff"
+
+= content_for :page_specific_styles do
+  / page specific styles go here
+  = stylesheet_link_tag "fuelux/css/tree-style"
+
+= content_for :page_specific_scripts do
+  /page specific javascript goes here
+  = javascript_include_tag "fuelux/js/tree.min",
+                           "dashboard/tree"
+
+  :javascript
+    jQuery(document).ready(function() {
+      TreeView.init();
+    });
+
+%section.wrapper.site-min-height
+  / BEGIN PAGE CONTENT
+  .row
+    .col-md-6
+      .panel
+        .panel-heading
+          Tree Style #1
+          %span.tools.pull-right
+            %a.fa.fa-chevron-down{:href => "javascript:;"}
+            %a.fa.fa-times{:href => "javascript:;"}
+        .panel-body
+          #FlatTree.tree.tree-plus-minus
+            .tree-folder{:style => "display:none;"}
+              .tree-folder-header
+                %i.fa.fa-folder
+                .tree-folder-name
+              .tree-folder-content
+              .tree-loader{:style => "display:none"}
+            .tree-item{:style => "display:none;"}
+              %i.tree-dot
+              .tree-item-name
+    .col-md-6
+      .panel
+        .panel-heading
+          Tree Style #2
+          %span.tools.pull-right
+            %a.fa.fa-chevron-down{:href => "javascript:;"}
+            %a.fa.fa-times{:href => "javascript:;"}
+        .panel-body
+          #FlatTree2.tree
+            .tree-folder{:style => "display:none;"}
+              .tree-folder-header
+                %i.fa.fa-folder
+                .tree-folder-name
+              .tree-folder-content
+              .tree-loader{:style => "display:none"}
+            .tree-item{:style => "display:none;"}
+              %i.tree-dot
+              .tree-item-name
+  .row
+    .col-md-6
+      .panel
+        .panel-heading
+          Tree Style #3
+          %span.tools.pull-right
+            %a.fa.fa-chevron-down{:href => "javascript:;"}
+            %a.fa.fa-times{:href => "javascript:;"}
+        .panel-body
+          #FlatTree3.tree.tree-plus-minus.tree-solid-line.tree-unselectable
+            .tree-folder{:style => "display:none;"}
+              .tree-folder-header
+                %i.fa.fa-folder
+                .tree-folder-name
+              .tree-folder-content
+              .tree-loader{:style => "display:none"}
+            .tree-item{:style => "display:none;"}
+              %i.tree-dot
+              .tree-item-name
+    .col-md-6
+      .panel
+        .panel-heading
+          Tree Style #4
+          %span.tools.pull-right
+            %a.fa.fa-chevron-down{:href => "javascript:;"}
+            %a.fa.fa-times{:href => "javascript:;"}
+        .panel-body
+          #FlatTree4.tree.tree-solid-line
+            .tree-folder{:style => "display:none;"}
+              .tree-folder-header
+                %i.fa.fa-folder
+                .tree-folder-name
+              .tree-folder-content
+              .tree-loader{:style => "display:none"}
+            .tree-item{:style => "display:none;"}
+              %i.tree-dot
+              .tree-item-name
+  / END PAGE CONTENT

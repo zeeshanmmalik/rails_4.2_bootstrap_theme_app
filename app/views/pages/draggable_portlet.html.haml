@@ -1,0 +1,82 @@
+= content_for :todo_list, "Draggable Portlet - ActiStaff"
+
+= content_for :page_specific_scripts do
+  /page specific javascript goes here
+  = javascript_include_tag "jquery-ui/jquery-ui-1.10.1.custom.min", 
+                           "dashboard/draggable-portlet"
+
+  :javascript
+    jQuery(document).ready(function() {
+      DraggablePortlet.init();
+    });
+
+%section.wrapper.site-min-height
+  / page start
+  #draggable_portlets.row-fluid
+    .col-md-4.column.sortable
+      / BEGIN Portlet PORTLET
+      .panel.panel-default
+        .panel-heading Portlet 1
+        .panel-body
+          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+          Cras mattis consectetur purus sit amet fermentum. Duis mollis.
+      / END Portlet PORTLET
+      / BEGIN Portlet PORTLET
+      .panel.panel-primary
+        .panel-heading Portlet 2
+        .panel-body
+          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+          Cras mattis consectetur purus sit amet fermentum. Duis mollis.
+      / END Portlet PORTLET
+      / BEGIN Portlet PORTLET
+      .panel.panel-success
+        .panel-heading Portlet 3
+        .panel-body
+          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+          Cras mattis consectetur purus sit amet fermentum. Duis mollis.
+      / END Portlet PORTLET
+    .col-md-4.column.sortable
+      / BEGIN Portlet PORTLET
+      .panel.panel-warning
+        .panel-heading Portlet 4
+        .panel-body
+          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+          Cras mattis consectetur purus sit amet fermentum. Duis mollis.
+      / END Portlet PORTLET
+      / BEGIN Portlet PORTLET
+      .panel.panel-danger
+        .panel-heading Portlet 5
+        .panel-body
+          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+          Cras mattis consectetur purus sit amet fermentum. Duis mollis.
+      / END Portlet PORTLET
+      / BEGIN Portlet PORTLET
+      .panel.panel-info
+        .panel-heading Portlet 6
+        .panel-body
+          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+          Cras mattis consectetur purus sit amet fermentum. Duis mollis.
+      / END Portlet PORTLET
+    .col-md-4.column.sortable
+      / BEGIN Portlet PORTLET
+      .panel.panel-default
+        .panel-heading Portlet 7
+        .panel-body
+          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+          Cras mattis consectetur purus sit amet fermentum. Duis mollis.
+      / END Portlet PORTLET
+      / BEGIN Portlet PORTLET
+      .panel.panel-success
+        .panel-heading Portlet 8
+        .panel-body
+          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+          Cras mattis consectetur purus sit amet fermentum. Duis mollis.
+      / END Portlet PORTLET
+      / BEGIN Portlet PORTLET
+      .panel.panel-primary
+        .panel-heading Portlet 9
+        .panel-body
+          Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+          Cras mattis consectetur purus sit amet fermentum. Duis mollis.
+      / END Portlet PORTLET
+  / page end    
