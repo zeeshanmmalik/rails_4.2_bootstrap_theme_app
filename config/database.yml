@@ -17,12 +17,16 @@ development:
 test:
   <<: *default
   database: actistaff-www_test
+  username: <%= ENV['PG_DB_DEV_USER'] %>
+  password: <%= ENV['PG_DB_DEV_PASS'] %>
+  host: localhost
+  port: 5432
 
 production:
   <<: *default
-  database: <%= ENV['ACTISTAFF-WWW_DB_PROD'] %>
-  username: <%= ENV['ACTISTAFF-WWW_DB_USERNAME'] %>
-  password: <%= ENV['ACTISTAFF-WWW_DB_PASSWORD'] %>
-  host: <%= ENV['ACTISTAFF-WWW_DB_HOST'] %>
-  port: <%= ENV['ACTISTAFF-WWW_DB_PORT'] %>
+  database: <%= ENV['ACTISTAFF_WWW_DB_PROD'] %>
+  username: <%= ENV['ACTISTAFF_WWW_DB_USERNAME'] %>
+  password: <%= ENV['ACTISTAFF_WWW_DB_PASSWORD'] %>
+  host: <%= ENV['ACTISTAFF_WWW_DB_HOST'] %>
+  port: <%= ENV['ACTISTAFF_WWW_DB_PORT'] %>
   

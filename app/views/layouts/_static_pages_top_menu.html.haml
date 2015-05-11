@@ -30,7 +30,7 @@
             %a{:href => "#{page_path("portfolio")}"} Portfolio
           %li{ class: "#{active_menu?("price", params[:id])}" }
             %a{:href => "#{page_path("price")}"} Price
-          %li{ class: "#{active_menu?("blog", params[:id])}" }
+          %li{ class: "#{active_menu?("blog", params[:id])} #{active_menu?("blog_detail", params[:id])}" }
             %a{:href => "#{page_path("blog")}"} Blog
           %li{ class: "#{active_menu?("contact", params[:id])}" }
             %a{:href => "#{page_path("contact")}"} Contact
