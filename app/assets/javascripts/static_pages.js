@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //
-//= require "common/jquery-1.8.3.min"
 //= require "common/hover-dropdown"
 //= require "bxslider/jquery.bxslider"
 //= require "static_pages/link-hover"
