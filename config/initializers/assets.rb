@@ -11,7 +11,8 @@ Rails.application.config.assets.version = '1.0'
 # images in vendor/assets are needed to be added via *.png/jpg etc
 Rails.application.config.assets.precompile += %w( static_pages.css dashboard.css
                                                   static_pages.js dashboard.js 
-                                                  static_pages/* dashboard/* common/* 
+                                                  static_pages/* dashboard/* common/*
+                                                  font-awesome/* 
                                                   fancybox/* revolution_slider/* bxslider/*
                                                   jquery-easy-pie-chart/* gritter/* 
                                                   toastr-master/* jquery-knob/*
