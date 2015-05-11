@@ -631,7 +631,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 }
 
 .log-arrow-up {
-    background: image-url("arrow-up.png") no-repeat;
+    background: image-url("dashboard/arrow-up.png") no-repeat;
     width: 20px;
     height: 11px;
     position: absolute;
@@ -686,7 +686,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
     transition: all .3s ease;
     border: 1px solid #fff;
     box-shadow: none;
-    background: image-url("search-icon.png") no-repeat 10px 8px;
+    background: image-url("dashboard/search-icon.png") no-repeat 10px 8px;
     padding:0 5px 0 35px;
     color: #000;
 }
@@ -967,7 +967,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 /**/
 
 .panel-body.chart-texture {
-    background: image-url("chart-texture.jpg");
+    background: image-url("dashboard/chart-texture.jpg");
     -webkit-border-radius: 4px 4px 0px 0px;
     border-radius: 4px 4px 0px 0px;
 }
@@ -1543,7 +1543,7 @@ ul.ft-link li a i {
 
 .owl-buttons .owl-prev {
     text-indent: -9999px;
-    background: image-url("left-arrow.png") no-repeat;
+    background: image-url("dashboard/left-arrow.png") no-repeat;
     width: 6px;
     height: 10px;
     display: inline-block;
@@ -1551,7 +1551,7 @@ ul.ft-link li a i {
 
 .owl-buttons .owl-next {
     text-indent: -9999px;
-    background: image-url("right-arrow.png") no-repeat;
+    background: image-url("dashboard/right-arrow.png") no-repeat;
     width: 6px;
     height: 10px;
     display: inline-block;
@@ -2282,7 +2282,7 @@ ul.inbox-pagination li {
 }
 
 .error-wrapper .icon-404{
-    background: image-url("404_icon.png") no-repeat;
+    background: image-url("dashboard/404_icon.png") no-repeat;
     width: 289px;
     height: 274px;
     display: inline-block;
@@ -2328,7 +2328,7 @@ ul.inbox-pagination li {
 }
 
 .error-wrapper .icon-500{
-    background: image-url("500_icon.png") no-repeat;
+    background: image-url("dashboard/500_icon.png") no-repeat;
     width: 289px;
     height: 274px;
     display: inline-block;
@@ -3161,7 +3161,7 @@ ul.amounts li {
 }
 
 input.spinner[type="text"], input.spinner[type="password"], input.spinner[type="datetime"], input.spinner[type="datetime-local"], input.spinner[type="date"], input.spinner[type="month"], input.spinner[type="time"], input.spinner[type="week"], input.spinner[type="number"], input.spinner[type="email"], input.spinner[type="url"], input.spinner[type="search"], input.spinner[type="tel"], input.spinner[type="color"] {
-    background: image-url("input-spinner.gif") right no-repeat !important;
+    background: image-url("dashboard/input-spinner.gif") right no-repeat !important;
 }
 
 
@@ -3286,8 +3286,8 @@ table.sliders tr td {
     position: relative;
     text-align: left;
     width: 80px;
-    -webkit-mask: image-url('mask.png') 0 0 no-repeat;
-    mask: image-url('mask.png') 0 0 no-repeat;
+    -webkit-mask: image-url('dashboard/mask.png') 0 0 no-repeat;
+    mask: image-url('dashboard/mask.png') 0 0 no-repeat;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -3393,8 +3393,8 @@ table.sliders tr td {
 .switch-square {
     border-radius: 6px;
     -webkit-border-radius: 6px;
-    -webkit-mask: image-url('mask.png') 0 0 no-repeat;
-    mask: image-url('mask.png') 0 0 no-repeat;
+    -webkit-mask: image-url('dashboard/mask.png') 0 0 no-repeat;
+    mask: image-url('dashboard/mask.png') 0 0 no-repeat;
 }
 .switch-square > div.switch-off label {
     border-color: #7f8c9a;
@@ -3556,19 +3556,19 @@ table.sliders tr td {
 }
 
 .has-js .label_radio {
-    background: image-url("checkbox/radio-off.png") no-repeat;
+    background: image-url("dashboard/checkbox/radio-off.png") no-repeat;
 }
 
 .has-js .label_check {
-    background: image-url("checkbox/check-off.png") no-repeat;
+    background: image-url("dashboard/checkbox/check-off.png") no-repeat;
 }
 
 .has-js label.c_on {
-    background: image-url("checkbox/check-on.png") no-repeat;
+    background: image-url("dashboard/checkbox/check-on.png") no-repeat;
 }
 
 .has-js label.r_on {
-    background: image-url("checkbox/radio-on.png") no-repeat;
+    background: image-url("dashboard/checkbox/radio-on.png") no-repeat;
 }
 
 .has-js .label_check input,
@@ -4030,7 +4030,7 @@ span.customSelect.changed {
     background-color: #fff;
 }
 .customSelectInner {
-    background:image-url("customSelect-arrow.gif") no-repeat center right;
+    background:image-url("dashboard/customSelect-arrow.gif") no-repeat center right;
 }
 
 /*boxed page */
@@ -4507,7 +4507,7 @@ tr.odd.gradeX td.sorting_1, tr.even.gradeX td.sorting_1, table.display tr.even.g
 /*lock screen*/
 
 .lock-screen {
-    background:#02bac6 image-url("lock-bg.jpg");
+    background:#02bac6 image-url("dashboard/lock-bg.jpg");
     background-size: cover;
     background-repeat: repeat;
 }
@@ -5236,7 +5236,7 @@ tr.odd.gradeX td.sorting_1, tr.even.gradeX td.sorting_1, table.display tr.even.g
     -o-transition: all .3s ease;
     transition: all .3s ease;
     box-shadow: none;
-    background: #01a6b2 image-url("chat-search.png") no-repeat 12px 9px;
+    background: #01a6b2 image-url("dashboard/chat-search.png") no-repeat 12px 9px;
     padding:0 5px 0 35px;
     margin-top: 2px;
     border: none;
@@ -5782,7 +5782,7 @@ a.guest-on i {
 }
 
 .mega-bg {
-    background-image: image-url("mega-menu/corner_image.jpg");
+    background-image: image-url("dashboard/mega-menu/corner_image.jpg");
     background-repeat: no-repeat;
     background-position: bottom right;
     position: absolute;
@@ -6123,7 +6123,7 @@ header.blue-bg .search  {
     transition: all .3s ease;
     border: 1px solid #fff;
     box-shadow: none;
-    background: image-url("search-icon-white.png") no-repeat 10px 8px;
+    background: image-url("dashboard/search-icon-white.png") no-repeat 10px 8px;
     padding:0 5px 0 35px;
     color: #000;
 }
