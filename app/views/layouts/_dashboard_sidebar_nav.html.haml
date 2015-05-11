@@ -4,28 +4,29 @@
     / sidebar menu start
     %ul#nav-accordion.sidebar-menu
       %li
-        %a.active{:href => "#{ dashboard_path('dashboard_home') }"} 
+        %a{:href => "#{ dashboard_path('dashboard_home') }",
+           class: "#{active_menu?(params[:id], "dashboard_home")}"} 
           %i.fa.fa-dashboard
           %span Dashboard
       %li.sub-menu
-        %a{:href => "javascript:;"}
+        %a{:href => "javascript:;", class: "#{active_menu?("layouts", menu_item(params[:id]))}"} 
           %i.fa.fa-laptop
           %span Layouts
         %ul.sub
-          %li
+          %li{  class: "#{active_menu?(params[:id], "boxed_page")}" }
             = link_to "Boxed Page", dashboard_path("boxed_page")
-          %li
+          %li{ class: "#{active_menu?(params[:id], "horizontal_menu")}"}
             = link_to "Horizontal Menu", dashboard_path("horizontal_menu")
-          %li
+          %li{ class: "#{active_menu?(params[:id], "header-color")}"}
             = link_to "Different Color Top bar", dashboard_path("header-color")
-          %li
+          %li{ class: "#{active_menu?(params[:id], "mega_menu")}"}
             = link_to "Mega Menu", dashboard_path("mega_menu")
-          %li
+          %li{ class: "#{active_menu?(params[:id], "language_switch_bar")}"}
             = link_to "Language Switch Bar", dashboard_path("language_switch_bar")
-          %li
+          %li{ class: "#{active_menu?(params[:id], "email_template")}"}
             = link_to "Email Template", dashboard_path("email_template"), target: "_blank"
       %li.sub-menu
-        %a{:href => "javascript:;"}
+        %a{:href => "javascript:;", class: "#{active_menu?("ui_elements", menu_item(params[:id]))}"} 
           %i.fa.fa-book
           %span UI Elements
         %ul.sub
@@ -48,7 +49,7 @@
           %li
             = link_to "Font Awesom", dashboard_path("font_awesome")
       %li.sub-menu
-        %a{:href => "javascript:;"}
+        %a{:href => "javascript:;", class: "#{active_menu?("components", menu_item(params[:id]))}"} 
           %i.fa.fa-cogs
           %span Components
         %ul.sub
@@ -63,7 +64,7 @@
           %li
             = link_to "Draggable Portlet", dashboard_path("draggable_portlet")
       %li.sub-menu
-        %a{:href => "javascript:;"}
+        %a{:href => "javascript:;", class: "#{active_menu?("form_stuff", menu_item(params[:id]))}"} 
           %i.fa.fa-tasks
           %span Form Stuff
         %ul.sub
@@ -84,7 +85,7 @@
           %li
             = link_to "Multiple File Upload", dashboard_path("file_upload")
       %li.sub-menu
-        %a{:href => "javascript:;"}
+        %a{:href => "javascript:;", class: "#{active_menu?(params[:id], menu_item(params[:id]))}"} 
           %i.fa.fa-th
           %span Data Tables
         %ul.sub
@@ -97,7 +98,7 @@
           %li
             = link_to "Editable Table", dashboard_path("editable_table")
       %li.sub-menu
-        %a{:href => "javascript:;"}
+        %a{:href => "javascript:;", class: "#{active_menu?(params[:id], menu_item(params[:id]))}"} 
           %i.fa.fa-envelope
           %span Mail
         %ul.sub
@@ -106,7 +107,7 @@
           %li
             = link_to "Inbox Details", dashboard_path("inbox_details")
       %li.sub-menu
-        %a{:href => "javascript:;"}
+        %a{:href => "javascript:;", class: "#{active_menu?(params[:id], menu_item(params[:id]))}"} 
           %i.fa.fa-bar-chart-o
           %span Charts
         %ul.sub
@@ -119,7 +120,7 @@
           %li
             = link_to "xChart", dashboard_path("xchart")
       %li.sub-menu
-        %a{:href => "javascript:;"}
+        %a{:href => "javascript:;", class: "#{active_menu?(params[:id], menu_item(params[:id]))}"} 
           %i.fa.fa-shopping-cart
           %span Shop
         %ul.sub
@@ -132,7 +133,7 @@
           %i.fa.fa-map-marker
           %span Google Maps
       %li.sub-menu
-        %a{:href => "javascript:;"}
+        %a{:href => "javascript:;", class: "#{active_menu?(params[:id], menu_item(params[:id]))}"} 
           %i.fa.fa-comments-o
           %span Chat Room
         %ul.sub
@@ -141,7 +142,7 @@
           %li
             %a{:href => "#{ dashboard_path('chat_room') }"} Chat Room
       %li.sub-menu
-        %a{:href => "javascript:;"}
+        %a{:href => "javascript:;", class: "#{active_menu?(params[:id], menu_item(params[:id]))}"} 
           %i.fa.fa-glass
           %span Extra
         %ul.sub
@@ -176,12 +177,12 @@
           %li
             %a{:href => "#{ dashboard_path('500') }"} 500 Error
       %li
-        %a{:href => "#{dashboard_path('login')}"}
+        %a{:href => "#{dashboard_path('login')}", class: "#{active_menu?(params[:id], menu_item(params[:id]))}"} 
           %i.fa.fa-user
           %span Login Page
       / multi level menu start
       %li.sub-menu
-        %a{:href => "javascript:;"}
+        %a{:href => "javascript:;", class: "#{active_menu?(params[:id], menu_item(params[:id]))}"} 
           %i.fa.fa-sitemap
           %span Multi level Menu
         %ul.sub
