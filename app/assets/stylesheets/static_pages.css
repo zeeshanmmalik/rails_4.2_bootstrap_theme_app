@@ -11,10 +11,10 @@
  * file per style scope.
  *
  *= require "static_pages/bootstrap-reset"
- *= require "static_pages/style"
  *= require "static_pages/style-responsive"
  *= require "static_pages/theme"
  *= require "bxslider/jquery.bxslider"
+ *= require "static_pages/style"
  *
  *= require_self
  */

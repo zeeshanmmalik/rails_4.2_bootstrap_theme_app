@@ -1,3 +1,4 @@
+$(function(){
 var Script = function () {
 
 
@@ -26,3 +27,4 @@ var Script = function () {
 
 
 }();
+});

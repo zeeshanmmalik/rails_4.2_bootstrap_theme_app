@@ -4,7 +4,8 @@
   / page specific styles go here
   = stylesheet_link_tag "fancybox/source/jquery.fancybox",
                         "revolution_slider/css/rs-style",
-                        "revolution_slider/rs-plugin/css/settings"
+                        "revolution_slider/rs-plugin/css/settings",
+                        "static_pages/flexslider"
   
 = content_for :page_specific_scripts do
   /page specific javascript goes here
@@ -17,6 +18,7 @@
   = javascript_include_tag "static_pages/jquery.flexslider", defer: "defer"
 
   :javascript
+    $(function(){
     RevSlide.initRevolutionSlider();
 
     $(window).load(function() {
@@ -43,6 +45,7 @@
 
     //    fancybox
     jQuery(".fancybox").fancybox();
+    });
 
   
 / revolution slider start
@@ -258,7 +261,7 @@
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
-              %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img1.jpg", :rel => "group"}
+              %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img1.jpg")}", :rel => "group"}
                 %i.fa.fa-search
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
@@ -266,7 +269,7 @@
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
-              %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img2.jpg", :rel => "group"}
+              %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img2.jpg")}", :rel => "group"}
                 %i.fa.fa-search
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
@@ -274,7 +277,7 @@
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
-              %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img3.jpg", :rel => "group"}
+              %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img3.jpg")}", :rel => "group"}
                 %i.fa.fa-search
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
@@ -282,7 +285,7 @@
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
-              %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img4.jpg", :rel => "group"}
+              %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img4.jpg")}", :rel => "group"}
                 %i.fa.fa-search
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
@@ -290,7 +293,7 @@
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
-              %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img5.jpg", :rel => "group"}
+              %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img5.jpg")}", :rel => "group"}
                 %i.fa.fa-search
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
@@ -298,7 +301,7 @@
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
-              %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img6.jpg", :rel => "group"}
+              %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img6.jpg")}", :rel => "group"}
                 %i.fa.fa-search
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
@@ -306,7 +309,7 @@
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
-              %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img7.jpg", :rel => "group"}
+              %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img7.jpg")}", :rel => "group"}
                 %i.fa.fa-search
         %li
           .element.item.view.view-tenth{"data-zlname" => "reverse-effect"}
@@ -314,7 +317,7 @@
             .mask
               %a{"data-zl-popup" => "link", :href => "javascript:;"}
                 %i.fa.fa-link
-              %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img1.jpg", :rel => "group"}
+              %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img1.jpg")}", :rel => "group"}
                 %i.fa.fa-search
   / recent work end
 / parallax start

@@ -1,4 +1,4 @@
-= content_for :page_title, "Home - ActiStaff"
+= content_for :page_title, "Portfolio - ActiStaff"
 
 = content_for :page_specific_styles do
   / page specific styles go here
@@ -8,10 +8,13 @@
 = content_for :page_specific_scripts do
   / page specific javascript goes here
   
-  = javascript_include_tag "fancybox/source/jquery.fancybox.pack", "bxslider/jquery.bxslider", 
+  = javascript_include_tag "fancybox/source/jquery.fancybox.pack",
+                           "bxslider/jquery.bxslider", 
                            "static_pages/superfish", "static_pages/jquery.isotope"
-= javascript_include_tag "static_pages/jquery.flexslider", defer: "defer"
+  = javascript_include_tag "static_pages/jquery.flexslider", defer: "defer"
+
   :javascript
+    $(function(){
     $(window).load(function() {
         $('[data-zlname = reverse-effect]').mateHover({
             position: 'y-reverse',
@@ -36,7 +39,8 @@
 
     //    fancybox
     jQuery(".fancybox").fancybox();
-
+    });
+    
     $(function() {
         var $container = $('#gallery');
         $container.isotope({
@@ -88,100 +92,100 @@
         %a{"data-filter" => ".flat:not(.development)", :href => "#"} Flat
     #gallery.col-4
       .element.design.development.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-        %img{:alt => "", :src => "img/works/img1.jpg"}/
+        = image_tag "static_pages/works/img1.jpg"
         .mask
           %h2 Freshness
           %a{"data-zl-popup" => "link", :href => "javascript:;"}
             %i.fa.fa-link
-          %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img1.jpg", :rel => "group"}
+          %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img1.jpg")}", :rel => "group"}
             %i.fa.fa-search
       .element.frontend.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-        %img{:alt => "", :src => "img/works/img2.jpg"}/
+        = image_tag "static_pages/works/img2.jpg"
         .mask
           %h2 Freshness
           %a{"data-zl-popup" => "link", :href => "javascript:;"}
             %i.fa.fa-link
-          %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img2.jpg", :rel => "group"}
+          %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img2.jpg")}", :rel => "group"}
             %i.fa.fa-search
       .element.flat.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-        %img{:alt => "", :src => "img/works/img3.jpg"}/
+        = image_tag "static_pages/works/img3.jpg"
         .mask
           %h2 Freshness
           %a{"data-zl-popup" => "link", :href => "javascript:;"}
             %i.fa.fa-link
-          %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img3.jpg", :rel => "group"}
+          %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img3.jpg")}", :rel => "group"}
             %i.fa.fa-search
       .element.development.flat.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-        %img{:alt => "", :src => "img/works/img4.jpg"}/
+        = image_tag "static_pages/works/img4.jpg"
         .mask
           %h2 Freshness
           %a{"data-zl-popup" => "link", :href => "javascript:;"}
             %i.fa.fa-link
-          %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img4.jpg", :rel => "group"}
+          %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img4.jpg")}", :rel => "group"}
             %i.fa.fa-search
       .element.design.flat.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-        %img{:alt => "", :src => "img/works/img5.jpg"}/
+        = image_tag "static_pages/works/img5.jpg"
         .mask
           %h2 Freshness
           %a{"data-zl-popup" => "link", :href => "javascript:;"}
             %i.fa.fa-link
-          %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img5.jpg", :rel => "group"}
+          %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img5.jpg")}", :rel => "group"}
             %i.fa.fa-search
       .element.dashboard.frontend.inner-photography.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-        %img{:alt => "", :src => "img/works/img6.jpg"}/
+        = image_tag "static_pages/works/img6.jpg"
         .mask
           %h2 Freshness
           %a{"data-zl-popup" => "link", :href => "javascript:;"}
             %i.fa.fa-link
-          %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img6.jpg", :rel => "group"}
+          %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img6.jpg")}", :rel => "group"}
             %i.fa.fa-search
       .element.flat.dashboard.design.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-        %img{:alt => "", :src => "img/works/img7.jpg"}/
+        = image_tag "static_pages/works/img7.jpg"
         .mask
           %h2 Freshness
           %a{"data-zl-popup" => "link", :href => "javascript:;"}
             %i.fa.fa-link
-          %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img7.jpg", :rel => "group"}
+          %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img7.jpg")}", :rel => "group"}
             %i.fa.fa-search
       .element.design.development.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-        %img{:alt => "", :src => "img/works/img1.jpg"}/
+        = image_tag "static_pages/works/img1.jpg"
         .mask
           %h2 Freshness
           %a{"data-zl-popup" => "link", :href => "javascript:;"}
             %i.fa.fa-link
-          %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img1.jpg", :rel => "group"}
+          %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img1.jpg")}", :rel => "group"}
             %i.fa.fa-search
       .element.design.development.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-        %img{:alt => "", :src => "img/works/img1.jpg"}/
+        = image_tag "static_pages/works/img1.jpg"
         .mask
           %h2 Freshness
           %a{"data-zl-popup" => "link", :href => "javascript:;"}
             %i.fa.fa-link
-          %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img1.jpg", :rel => "group"}
+          %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img1.jpg")}", :rel => "group"}
             %i.fa.fa-search
       .element.frontend.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-        %img{:alt => "", :src => "img/works/img2.jpg"}/
+        = image_tag "static_pages/works/img2.jpg"
         .mask
           %h2 Freshness
           %a{"data-zl-popup" => "link", :href => "javascript:;"}
             %i.fa.fa-link
-          %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img2.jpg", :rel => "group"}
+          %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img2.jpg")}", :rel => "group"}
             %i.fa.fa-search
       .element.flat.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-        %img{:alt => "", :src => "img/works/img3.jpg"}/
+        = image_tag "static_pages/works/img3.jpg"
         .mask
           %h2 Freshness
           %a{"data-zl-popup" => "link", :href => "javascript:;"}
             %i.fa.fa-link
-          %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img3.jpg", :rel => "group"}
+          %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img3.jpg")}", :rel => "group"}
             %i.fa.fa-search
       .element.development.flat.item.view.view-tenth{"data-zlname" => "reverse-effect"}
-        %img{:alt => "", :src => "img/works/img4.jpg"}/
+        = image_tag "static_pages/works/img4.jpg"
         .mask
           %h2 Freshness
           %a{"data-zl-popup" => "link", :href => "javascript:;"}
             %i.fa.fa-link
-          %a.fancybox{"data-zl-popup" => "link2", :href => "img/works/img4.jpg", :rel => "group"}
+          %a.fancybox{"data-zl-popup" => "link2", :href => "#{image_path("static_pages/works/img4.jpg")}", :rel => "group"}
             %i.fa.fa-search
   / portfolio end
 / container end
