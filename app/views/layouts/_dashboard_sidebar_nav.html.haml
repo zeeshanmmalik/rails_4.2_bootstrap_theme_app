@@ -30,38 +30,38 @@
           %i.fa.fa-book
           %span UI Elements
         %ul.sub
-          %li
+          %li{  class: "#{active_menu?(params[:id], "general")}" }
             = link_to "General", dashboard_path("general")
-          %li
+          %li{  class: "#{active_menu?(params[:id], "buttons")}" }
             = link_to "Buttons", dashboard_path("buttons")
-          %li
+          %li{  class: "#{active_menu?(params[:id], "modal")}" }
             = link_to "Modal", dashboard_path("modal")
-          %li
+          %li{  class: "#{active_menu?(params[:id], "toastr")}" }
             = link_to "Toastr Notifications", dashboard_path("toastr")
-          %li
+          %li{  class: "#{active_menu?(params[:id], "widget")}" }
             = link_to "Widget", dashboard_path("widget")
-          %li
+          %li{  class: "#{active_menu?(params[:id], "slider")}" }
             = link_to "Slider", dashboard_path("slider")
-          %li
+          %li{  class: "#{active_menu?(params[:id], "nestable")}" }
             = link_to "Nestable", dashboard_path("nestable")
-          %li
+          %li{  class: "#{active_menu?(params[:id], "tree")}" }
             = link_to "Tree View", dashboard_path("tree")
-          %li
+          %li{  class: "#{active_menu?(params[:id], "font_awesome")}" }
             = link_to "Font Awesom", dashboard_path("font_awesome")
       %li.sub-menu
         %a{:href => "javascript:;", class: "#{active_menu?("components", menu_item(params[:id]))}"} 
           %i.fa.fa-cogs
           %span Components
         %ul.sub
-          %li
+          %li{  class: "#{active_menu?(params[:id], "grids")}" }
             = link_to "Grids", dashboard_path("grids")
-          %li
+          %li{  class: "#{active_menu?(params[:id], "calendar")}" }
             = link_to "Calendar", dashboard_path("calendar")
-          %li
+          %li{  class: "#{active_menu?(params[:id], "gallery")}" }
             = link_to "Gallery", dashboard_path("gallery")
-          %li
+          %li{  class: "#{active_menu?(params[:id], "todo_list")}" }
             = link_to "Todo List", dashboard_path("todo_list")
-          %li
+          %li{  class: "#{active_menu?(params[:id], "draggable_portlet")}" }
             = link_to "Draggable Portlet", dashboard_path("draggable_portlet")
       %li.sub-menu
         %a{:href => "javascript:;", class: "#{active_menu?("form_stuff", menu_item(params[:id]))}"} 
