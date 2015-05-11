@@ -17,22 +17,22 @@
             = link_to "About", page_path("about")
           %li{ class: "#{active_menu?("services", params[:id])}" }
             = link_to "Service", page_path("services")
-          %li.dropdown
+          %li{ class: "dropdown #{active_menu?("typography.html", params[:id])} #{active_menu?("button.html", params[:id])}"}
             %a.dropdown-toggle{"data-close-others" => "false", "data-delay" => "0", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"}
               Feature
               %b.fa.fa-angle-down
             %ul.dropdown-menu
-              %li
+              %li{ class: "#{active_menu?("typography.html", params[:id])}" }
                 %a{:href => "typography.html"} Typography
-              %li
+              %li{ class: "#{active_menu?("button.html", params[:id])}" }
                 %a{:href => "button.html"} Buttons
-          %li
+          %li{ class: "#{active_menu?("portfolio", params[:id])}" }
             %a{:href => "#{page_path("portfolio")}"} Portfolio
-          %li
+          %li{ class: "#{active_menu?("price", params[:id])}" }
             %a{:href => "#{page_path("price")}"} Price
-          %li
+          %li{ class: "#{active_menu?("blog", params[:id])}" }
             %a{:href => "#{page_path("blog")}"} Blog
-          %li
+          %li{ class: "#{active_menu?("contact", params[:id])}" }
             %a{:href => "#{page_path("contact")}"} Contact
           %li.dropdown.language
             %a.dropdown-toggle{"data-close-others" => "true", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"}

@@ -19,12 +19,5 @@ var Script = function () {
         slideWidth: 276,
         slideMargin: 20
     });
-
-
-
-
-
-
-
 }();
 });

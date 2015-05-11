@@ -13,6 +13,7 @@
 //
 //= require "common/hover-dropdown"
 //= require "bxslider/jquery.bxslider"
-//= require "static_pages/link-hover"
 //= require "static_pages/jquery.easing.min"
+//= require "static_pages/link-hover"
 //= require "static_pages/common-scripts"
+
