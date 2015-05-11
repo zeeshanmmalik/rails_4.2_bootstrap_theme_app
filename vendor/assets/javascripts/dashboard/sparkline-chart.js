@@ -1,3 +1,4 @@
+$(document).ready(function() {
 var Script = function () {
 
     $(".sparkline").each(function(){
@@ -124,3 +125,4 @@ var Script = function () {
     });
 
 }();
+});

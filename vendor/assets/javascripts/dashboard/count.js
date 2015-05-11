@@ -1,3 +1,4 @@
+$(document).ready(function() {
 function countUp(count)
 {
     var div_by = 100,
@@ -89,3 +90,4 @@ function countUp4(count)
 }
 
 countUp4(10328);
+});

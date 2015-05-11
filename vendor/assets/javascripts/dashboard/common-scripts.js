@@ -18,6 +18,7 @@ $(function(){
  $.slidebars();
 });
 
+$(function(){
 var Script = function () {
 
 //    sidebar dropdown menu auto scrolling
@@ -135,3 +136,4 @@ var Script = function () {
 
 
 }();
+});

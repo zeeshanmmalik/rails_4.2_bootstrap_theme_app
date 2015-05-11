@@ -1,3 +1,4 @@
+$(document).ready(function() {
 var Script = function () {
 
 // easy pie chart
@@ -37,3 +38,4 @@ var Script = function () {
     });
 
 }();
+});
