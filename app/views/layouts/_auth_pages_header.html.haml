@@ -1,16 +1,16 @@
 / header start
-%header.header-frontend
+%header
   .navbar.navbar-default.navbar-static-top
     .container
       .navbar-header
         %button.navbar-toggle{"data-target" => ".navbar-collapse",
                               "data-toggle" => "collapse", :type => "button"}
           %span.fa.fa-bars
-        %a.navbar-brand{:href => "home"}
+        %a.logo{:href => "#{page_path("home")}"}
           Acti
           %span Staff
       .navbar-collapse.collapse
-        %ul.nav.navbar-nav
+        %ul.nav.navbar-nav.pull-right
           %li{ class: "#{active_menu?("home", params[:id])}" }
             = link_to "Home", page_path("home")
           %li{ class: "#{active_menu?("about", params[:id])}" }
@@ -23,9 +23,9 @@
               %b.fa.fa-angle-down
             %ul.dropdown-menu
               %li{ class: "#{active_menu?("typography.html", params[:id])}" }
-                %a{:href => "typography.html"} Typography
+                %a{:href => "#{page_path("typography.html")}"} Typography
               %li{ class: "#{active_menu?("button.html", params[:id])}" }
-                %a{:href => "button.html"} Buttons
+                %a{:href => "#{page_path("button.html")}"} Buttons
           %li{ class: "#{active_menu?("portfolio", params[:id])}" }
             %a{:href => "#{page_path("portfolio")}"} Portfolio
           %li{ class: "#{active_menu?("price", params[:id])}" }
@@ -34,30 +34,4 @@
             %a{:href => "#{page_path("blog")}"} Blog
           %li{ class: "#{active_menu?("contact", params[:id])}" }
             %a{:href => "#{page_path("contact")}"} Contact
-          %li{ class: "#{active_menu?("login", params[:id])}" }
-            %a{:href => "#{dashboard_path("login")}"} Login
-          %li.dropdown.language
-            %a.dropdown-toggle{"data-close-others" => "true", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"}
-              = image_tag "static_pages/flags/us.png"
-              %span.username US
-              %b.fa.fa-angle-down
-            %ul.dropdown-menu
-              %li
-                %a{:href => "#"}
-                  = image_tag "static_pages/flags/es.png"
-                  Spanish
-              %li
-                %a{:href => "#"}
-                  = image_tag "static_pages/flags/de.png"
-                  German
-              %li
-                %a{:href => "#"}
-                  = image_tag "static_pages/flags/ru.png"
-                  Russian
-              %li
-                %a{:href => "#"}
-                  = image_tag "static_pages/flags/fr.png"
-                  French
-          %li
-            %input.form-control.search{:placeholder => " Search", :type => "text"}/
 / header end
