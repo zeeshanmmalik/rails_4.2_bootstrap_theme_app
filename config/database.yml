@@ -8,7 +8,7 @@ default: &default
 
 development:
   <<: *default
-  database: actistaff-www_development
+  database: bootstrap-flatlab-theme_development
   username: <%= ENV['PG_DB_DEV_USER'] %>
   password: <%= ENV['PG_DB_DEV_PASS'] %>
   host: localhost
@@ -16,7 +16,7 @@ development:
 
 test:
   <<: *default
-  database: actistaff-www_test
+  database: bootstrap-flatlab-theme_test
   username: <%= ENV['PG_DB_DEV_USER'] %>
   password: <%= ENV['PG_DB_DEV_PASS'] %>
   host: localhost
@@ -24,9 +24,9 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV['ACTISTAFF_WWW_DB_PROD'] %>
-  username: <%= ENV['ACTISTAFF_WWW_DB_USERNAME'] %>
-  password: <%= ENV['ACTISTAFF_WWW_DB_PASSWORD'] %>
-  host: <%= ENV['ACTISTAFF_WWW_DB_HOST'] %>
-  port: <%= ENV['ACTISTAFF_WWW_DB_PORT'] %>
+  database: <%= ENV['BOOTSTRAP_FLATLAB_THEME_DB_PROD'] %>
+  username: <%= ENV['BOOTSTRAP_FLATLAB_THEME_DB_USERNAME'] %>
+  password: <%= ENV['BOOTSTRAP_FLATLAB_THEME_DB_PASSWORD'] %>
+  host: <%= ENV['BOOTSTRAP_FLATLAB_THEME_DB_HOST'] %>
+  port: <%= ENV['BOOTSTRAP_FLATLAB_THEME_DB_PORT'] %>
   
